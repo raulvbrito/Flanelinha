@@ -1,0 +1,911 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */; };
+		4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */; };
+		417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 417453B621A84EDF00918180 /* ParkingMarkerView.xib */; };
+		417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */; };
+		417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453BA21A883B400918180 /* ParkingMarkerView.swift */; };
+		419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */; };
+		41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CA921A31E9300A32DCC /* AppDelegate.swift */; };
+		41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CAB21A31E9300A32DCC /* MapViewController.swift */; };
+		41AC3CAF21A31E9300A32DCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CAD21A31E9300A32DCC /* Main.storyboard */; };
+		41AC3CB221A31E9300A32DCC /* Flanelinha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CB021A31E9300A32DCC /* Flanelinha.xcdatamodeld */; };
+		41AC3CB421A31E9600A32DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CB321A31E9600A32DCC /* Assets.xcassets */; };
+		41AC3CB721A31E9600A32DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CB521A31E9600A32DCC /* LaunchScreen.storyboard */; };
+		41AC3CC221A31E9600A32DCC /* FlanelinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CC121A31E9600A32DCC /* FlanelinhaTests.swift */; };
+		41AC3CCD21A31E9600A32DCC /* FlanelinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */; };
+		41AC3CE321A36E5600A32DCC /* dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CE221A36DD200A32DCC /* dark.json */; };
+		4888784F6C14CE9DF55AE361 /* Pods_FlanelinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */; };
+		BB51E59F7E7A522936142C05 /* Pods_FlanelinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41AC3CBE21A31E9600A32DCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41AC3C9E21A31E9300A32DCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41AC3CA521A31E9300A32DCC;
+			remoteInfo = Flanelinha;
+		};
+		41AC3CC921A31E9600A32DCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41AC3C9E21A31E9300A32DCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41AC3CA521A31E9300A32DCC;
+			remoteInfo = Flanelinha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		417453B621A84EDF00918180 /* ParkingMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkingMarkerView.xib; sourceTree = "<group>"; };
+		417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMarkerView.swift; sourceTree = "<group>"; };
+		417453BA21A883B400918180 /* ParkingMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMarkerView.swift; sourceTree = "<group>"; };
+		419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		41AC3CA621A31E9300A32DCC /* Flanelinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flanelinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41AC3CA921A31E9300A32DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41AC3CAB21A31E9300A32DCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		41AC3CAE21A31E9300A32DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41AC3CB121A31E9300A32DCC /* Flanelinha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flanelinha.xcdatamodel; sourceTree = "<group>"; };
+		41AC3CB321A31E9600A32DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41AC3CB621A31E9600A32DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		41AC3CB821A31E9600A32DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41AC3CBD21A31E9600A32DCC /* FlanelinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlanelinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41AC3CC121A31E9600A32DCC /* FlanelinhaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlanelinhaTests.swift; sourceTree = "<group>"; };
+		41AC3CC321A31E9600A32DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41AC3CC821A31E9600A32DCC /* FlanelinhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlanelinhaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlanelinhaUITests.swift; sourceTree = "<group>"; };
+		41AC3CCE21A31E9600A32DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41AC3CE221A36DD200A32DCC /* dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dark.json; sourceTree = "<group>"; };
+		44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flanelinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.release.xcconfig"; sourceTree = "<group>"; };
+		8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.release.xcconfig"; sourceTree = "<group>"; };
+		F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41AC3CA321A31E9300A32DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CBA21A31E9600A32DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB51E59F7E7A522936142C05 /* Pods_FlanelinhaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CC521A31E9600A32DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4888784F6C14CE9DF55AE361 /* Pods_FlanelinhaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05DCE6B7C6EC027433D3321A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */,
+				8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */,
+				2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		419FF3E521A5E22800977C34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				419FF3E621A5E22D00977C34 /* Cells */,
+				417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */,
+				417453BA21A883B400918180 /* ParkingMarkerView.swift */,
+				417453B621A84EDF00918180 /* ParkingMarkerView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		419FF3E621A5E22D00977C34 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */,
+				4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		41AC3C9D21A31E9300A32DCC = {
+			isa = PBXGroup;
+			children = (
+				41AC3CA821A31E9300A32DCC /* Flanelinha */,
+				41AC3CC021A31E9600A32DCC /* FlanelinhaTests */,
+				41AC3CCB21A31E9600A32DCC /* FlanelinhaUITests */,
+				41AC3CA721A31E9300A32DCC /* Products */,
+				DAACF46F0FB91F9B56F98290 /* Pods */,
+				05DCE6B7C6EC027433D3321A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		41AC3CA721A31E9300A32DCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CA621A31E9300A32DCC /* Flanelinha.app */,
+				41AC3CBD21A31E9600A32DCC /* FlanelinhaTests.xctest */,
+				41AC3CC821A31E9600A32DCC /* FlanelinhaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41AC3CA821A31E9300A32DCC /* Flanelinha */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CB321A31E9600A32DCC /* Assets.xcassets */,
+				41AC3CE221A36DD200A32DCC /* dark.json */,
+				41AC3CB821A31E9600A32DCC /* Info.plist */,
+				41AC3CDB21A326F100A32DCC /* Resources */,
+				41AC3CDC21A326FC00A32DCC /* Sources */,
+				41AC3CDE21A3272E00A32DCC /* Storyboards */,
+				41AC3CDF21A3275000A32DCC /* Supporting Files */,
+			);
+			path = Flanelinha;
+			sourceTree = "<group>";
+		};
+		41AC3CC021A31E9600A32DCC /* FlanelinhaTests */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CC121A31E9600A32DCC /* FlanelinhaTests.swift */,
+				41AC3CC321A31E9600A32DCC /* Info.plist */,
+			);
+			path = FlanelinhaTests;
+			sourceTree = "<group>";
+		};
+		41AC3CCB21A31E9600A32DCC /* FlanelinhaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */,
+				41AC3CCE21A31E9600A32DCC /* Info.plist */,
+			);
+			path = FlanelinhaUITests;
+			sourceTree = "<group>";
+		};
+		41AC3CDB21A326F100A32DCC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		41AC3CDC21A326FC00A32DCC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				419FF3E521A5E22800977C34 /* Views */,
+				41AC3CE021A327C700A32DCC /* Data */,
+				41AC3CDD21A3271300A32DCC /* View Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		41AC3CDD21A3271300A32DCC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CAB21A31E9300A32DCC /* MapViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		41AC3CDE21A3272E00A32DCC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CB521A31E9600A32DCC /* LaunchScreen.storyboard */,
+				41AC3CAD21A31E9300A32DCC /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		41AC3CDF21A3275000A32DCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CA921A31E9300A32DCC /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41AC3CE021A327C700A32DCC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CE121A327E400A32DCC /* Core Data */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		41AC3CE121A327E400A32DCC /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				41AC3CB021A31E9300A32DCC /* Flanelinha.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		DAACF46F0FB91F9B56F98290 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */,
+				54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */,
+				A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */,
+				B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */,
+				151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */,
+				A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41AC3CA521A31E9300A32DCC /* Flanelinha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41AC3CD121A31E9600A32DCC /* Build configuration list for PBXNativeTarget "Flanelinha" */;
+			buildPhases = (
+				D4FCCDFC994B5939C579B2AC /* [CP] Check Pods Manifest.lock */,
+				41AC3CA221A31E9300A32DCC /* Sources */,
+				41AC3CA321A31E9300A32DCC /* Frameworks */,
+				41AC3CA421A31E9300A32DCC /* Resources */,
+				519486DDE569F1007F9E31D2 /* [CP] Embed Pods Frameworks */,
+				1A089D36B85B76819F194AC9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Flanelinha;
+			productName = Flanelinha;
+			productReference = 41AC3CA621A31E9300A32DCC /* Flanelinha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41AC3CBC21A31E9600A32DCC /* FlanelinhaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41AC3CD421A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaTests" */;
+			buildPhases = (
+				0021BA99F2E4ECF646DFB232 /* [CP] Check Pods Manifest.lock */,
+				41AC3CB921A31E9600A32DCC /* Sources */,
+				41AC3CBA21A31E9600A32DCC /* Frameworks */,
+				41AC3CBB21A31E9600A32DCC /* Resources */,
+				0B6C68AFF9AA480A2B3AF648 /* [CP] Embed Pods Frameworks */,
+				88CA15AF17F761277ECA2411 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41AC3CBF21A31E9600A32DCC /* PBXTargetDependency */,
+			);
+			name = FlanelinhaTests;
+			productName = FlanelinhaTests;
+			productReference = 41AC3CBD21A31E9600A32DCC /* FlanelinhaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41AC3CC721A31E9600A32DCC /* FlanelinhaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41AC3CD721A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaUITests" */;
+			buildPhases = (
+				84EFD8EA722097BCD58BE764 /* [CP] Check Pods Manifest.lock */,
+				41AC3CC421A31E9600A32DCC /* Sources */,
+				41AC3CC521A31E9600A32DCC /* Frameworks */,
+				41AC3CC621A31E9600A32DCC /* Resources */,
+				324034D8ABFE69FB7DBFA37F /* [CP] Embed Pods Frameworks */,
+				9A9FA158E3069798BE8EC0DD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41AC3CCA21A31E9600A32DCC /* PBXTargetDependency */,
+			);
+			name = FlanelinhaUITests;
+			productName = FlanelinhaUITests;
+			productReference = 41AC3CC821A31E9600A32DCC /* FlanelinhaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41AC3C9E21A31E9300A32DCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Raul Brito";
+				TargetAttributes = {
+					41AC3CA521A31E9300A32DCC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					41AC3CBC21A31E9600A32DCC = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 41AC3CA521A31E9300A32DCC;
+					};
+					41AC3CC721A31E9600A32DCC = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 41AC3CA521A31E9300A32DCC;
+					};
+				};
+			};
+			buildConfigurationList = 41AC3CA121A31E9300A32DCC /* Build configuration list for PBXProject "Flanelinha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41AC3C9D21A31E9300A32DCC;
+			productRefGroup = 41AC3CA721A31E9300A32DCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41AC3CA521A31E9300A32DCC /* Flanelinha */,
+				41AC3CBC21A31E9600A32DCC /* FlanelinhaTests */,
+				41AC3CC721A31E9600A32DCC /* FlanelinhaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41AC3CA421A31E9300A32DCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AC3CB721A31E9600A32DCC /* LaunchScreen.storyboard in Resources */,
+				417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */,
+				41AC3CB421A31E9600A32DCC /* Assets.xcassets in Resources */,
+				41AC3CAF21A31E9300A32DCC /* Main.storyboard in Resources */,
+				41AC3CE321A36E5600A32DCC /* dark.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CBB21A31E9600A32DCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CC621A31E9600A32DCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0021BA99F2E4ECF646DFB232 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlanelinhaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B6C68AFF9AA480A2B3AF648 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A089D36B85B76819F194AC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		324034D8ABFE69FB7DBFA37F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		519486DDE569F1007F9E31D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84EFD8EA722097BCD58BE764 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlanelinhaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88CA15AF17F761277ECA2411 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A9FA158E3069798BE8EC0DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4FCCDFC994B5939C579B2AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flanelinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41AC3CA221A31E9300A32DCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AC3CB221A31E9300A32DCC /* Flanelinha.xcdatamodeld in Sources */,
+				4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */,
+				417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */,
+				41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */,
+				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
+				41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */,
+				417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CB921A31E9600A32DCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AC3CC221A31E9600A32DCC /* FlanelinhaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC3CC421A31E9600A32DCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AC3CCD21A31E9600A32DCC /* FlanelinhaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41AC3CBF21A31E9600A32DCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41AC3CA521A31E9300A32DCC /* Flanelinha */;
+			targetProxy = 41AC3CBE21A31E9600A32DCC /* PBXContainerItemProxy */;
+		};
+		41AC3CCA21A31E9600A32DCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41AC3CA521A31E9300A32DCC /* Flanelinha */;
+			targetProxy = 41AC3CC921A31E9600A32DCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41AC3CAD21A31E9300A32DCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41AC3CAE21A31E9300A32DCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41AC3CB521A31E9600A32DCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41AC3CB621A31E9600A32DCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41AC3CCF21A31E9600A32DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		41AC3CD021A31E9600A32DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41AC3CD221A31E9600A32DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = Flanelinha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.Flanelinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		41AC3CD321A31E9600A32DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = Flanelinha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.Flanelinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		41AC3CD521A31E9700A32DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = FlanelinhaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.FlanelinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flanelinha.app/Flanelinha";
+			};
+			name = Debug;
+		};
+		41AC3CD621A31E9700A32DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = FlanelinhaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.FlanelinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flanelinha.app/Flanelinha";
+			};
+			name = Release;
+		};
+		41AC3CD821A31E9700A32DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = FlanelinhaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.FlanelinhaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Flanelinha;
+			};
+			name = Debug;
+		};
+		41AC3CD921A31E9700A32DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				INFOPLIST_FILE = FlanelinhaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulvbrito.FlanelinhaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Flanelinha;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41AC3CA121A31E9300A32DCC /* Build configuration list for PBXProject "Flanelinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41AC3CCF21A31E9600A32DCC /* Debug */,
+				41AC3CD021A31E9600A32DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41AC3CD121A31E9600A32DCC /* Build configuration list for PBXNativeTarget "Flanelinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41AC3CD221A31E9600A32DCC /* Debug */,
+				41AC3CD321A31E9600A32DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41AC3CD421A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41AC3CD521A31E9700A32DCC /* Debug */,
+				41AC3CD621A31E9700A32DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41AC3CD721A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41AC3CD821A31E9700A32DCC /* Debug */,
+				41AC3CD921A31E9700A32DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		41AC3CB021A31E9300A32DCC /* Flanelinha.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				41AC3CB121A31E9300A32DCC /* Flanelinha.xcdatamodel */,
+			);
+			currentVersion = 41AC3CB121A31E9300A32DCC /* Flanelinha.xcdatamodel */;
+			path = Flanelinha.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 41AC3C9E21A31E9300A32DCC /* Project object */;
+}

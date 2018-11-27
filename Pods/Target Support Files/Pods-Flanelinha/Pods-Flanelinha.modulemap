@@ -1,0 +1,6 @@
+framework module Pods_Flanelinha {
+  umbrella header "Pods-Flanelinha-umbrella.h"
+
+  export *
+  module * { export * }
+}
