@@ -7,59 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12EB1270667978BC88D14DD955A72BD4 /* Pods-Flanelinha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FEB944AA313B79D277BC1D40C860F7 /* Pods-Flanelinha-dummy.m */; };
+		04DF9A04B53FDA600675C0FA10D0C57F /* HierarchyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF9C308E19FC0DF900B6F9217CE9A8 /* HierarchyType.swift */; };
+		16431F2363F21E25AEB6C76E0DFBFC4F /* MapboxGeocoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AF38839E2214C85EB64922E35002246B /* MapboxGeocoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		237D2589E0FEB92A3FAA1F7A58128E09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		272539ED226AD9C5E0D7571A03B79810 /* MapboxGeocoder.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80335EAC9FC3452E521C11746FECE29D /* MapboxGeocoder.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF61E2472FF03A58CB1D2429ED33CE4 /* SafeMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E1C5153B33B9A772B51D642C8C766B /* SafeMappable.swift */; };
+		2DE01FDDFDA3B846E1A67AFEB59F9E50 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AEAB58D1311643E399C4EF8EFA250 /* MBPlacemark.swift */; };
+		2F3E22843298E715E59FBA7422DF12DC /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD62A73059403239C1624D73895DF3 /* MBPlacemarkScope.swift */; };
+		402F7BD984FE3B7D5E653662D1597FD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		43CA0283C8B299E4CD5015E3AE8A05BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		AFBEFC092BE95806A6D5F4D5C463D38F /* Pods-Flanelinha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FBB733EA9E0EE3420DA598ADBDB1E3 /* Pods-Flanelinha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ADAA7056A37D9A50637996EB19BF4E9 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E4B4F61D5F3DEE1F34B8533A188B2 /* Mappable.swift */; };
+		4B303C72588445B5E4066D88EB0FB323 /* Array+Tailor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A1FF371400FE77F7BF0DD0EEF212 /* Array+Tailor.swift */; };
+		5293974A1C136E32E56D4F7AF922D16C /* Tailor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B9D807B099C64C285ABD9D9EE52294 /* Tailor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		559497DB6D15B4553F48EA79D411526C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C98F4A64E059215F0BE41990CD89C /* String+Extensions.swift */; };
+		585572CF3BC1077BA545E71E56C88368 /* Pods-Flanelinha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FEB944AA313B79D277BC1D40C860F7 /* Pods-Flanelinha-dummy.m */; };
+		5CA030BE9BCFC345E5B17D678E9E225F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F401B269900B46457A1BEDF4126C05 /* Operators.swift */; };
+		69E7678F05150D9A7A835337238C21FF /* MBPlacemarkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3AD0BBA105C4B5665AEB8C84C0164A /* MBPlacemarkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75647C63D3ADCBEC6A600E9656BF3A29 /* Pods-Flanelinha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FBB733EA9E0EE3420DA598ADBDB1E3 /* Pods-Flanelinha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		822D3A4C0ED6BBA7FE70570A3DA95598 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE51C8D4D47FB4A0699F55CD5F4C218 /* Optional+Extensions.swift */; };
+		87EC1CB90BDE6691C7E5E920BA04A64E /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F3CB7D763B75C073E8A789DF2EFBB /* CoreLocation.swift */; };
+		963E560846DE662AA6E3B3E50AC72A4E /* Tailor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7D8575F28491F9AE8D26AF58DB831 /* Tailor.swift */; };
+		9656FFD54E0AF1A4431ACE4D718B89D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		A92283A4D7CCF27136B35AEBEF6BEF6D /* Tailor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9CAEAB4916DE84EEF783EDDC7FA67 /* Tailor-dummy.m */; };
+		AC57AA3ACE776F5442576ADB4E89C47A /* MBGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4A345CE295B6353A5EF6195A738FB /* MBGeocoder.swift */; };
+		BEEEA95BB55FDA1E5380AE964CD2E692 /* MBRectangularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825FC27E53A252536462576DC9E0FF7 /* MBRectangularRegion.swift */; };
+		C54A455D513408D54FAEC967B9349B58 /* PathAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F9E9C24907A22DA466807DA35E38C /* PathAccessible.swift */; };
+		C8DFFE0AB1BC89B0FBB7125574543732 /* Dictionary+Tailor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDB625A0EA235CA8418CC05BCC4D546 /* Dictionary+Tailor.swift */; };
+		C9C94F3E4CDE886AE82CED70160A115C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		D165413DA5AF90A8EDB0881A7BF7B600 /* Pods-FlanelinhaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C38F9F04DEBC2A15F308FF0F79AEE /* Pods-FlanelinhaTests-dummy.m */; };
-		D5F5C019997F6269703717B42698B7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		D51228763220CBF94048C3BE9E8D1B57 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064183B59EF229BEFBA132FF6AE5DF8 /* MBGeocodeOptions.swift */; };
 		DEAB975485B7464EFCDB6FC9A6CC5C1D /* Pods-FlanelinhaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E99522CF2665ADBDBE2134C7BFF7215 /* Pods-FlanelinhaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E308A6B70CE12D009628E65414EAAF04 /* Pods-FlanelinhaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 088187F9007CD7D171E903DDF8B0150A /* Pods-FlanelinhaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4B80818F798477AFBAA2DB38E6B73A /* DefaultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886EA99B4BA13F5EDD3C8A53AFC5E307 /* DefaultType.swift */; };
+		F8D5AD0B3E63490AC43B785A26AA312A /* MapboxGeocoder.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A37602EF3C72D418E656BDA1E160A /* MapboxGeocoder.swift-dummy.m */; };
 		FE9C669578930D1743FCA976AD58BA10 /* Pods-FlanelinhaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9AA380C9E649E1E43F651806B12BE1 /* Pods-FlanelinhaUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		826734AE458F69B67ACE703F660EBFEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DDF3C44DDDF05DDA7AD6036798FCCD;
+			remoteInfo = Tailor;
+		};
+		F4533E86B41C3D0E6CD015D0C50AAEDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D093AF1394962F28FDFD3FAADE6EE222;
+			remoteInfo = MapboxGeocoder.swift;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		088187F9007CD7D171E903DDF8B0150A /* Pods-FlanelinhaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlanelinhaTests-umbrella.h"; sourceTree = "<group>"; };
-		08F1229163C7F5E61C7C4B361510F11C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		0B1F3CB7D763B75C073E8A789DF2EFBB /* CoreLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreLocation.swift; path = MapboxGeocoder/CoreLocation.swift; sourceTree = "<group>"; };
 		0C14DC519FE59732934A40A7D9B0BECC /* Pods-FlanelinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlanelinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F2163294AA33217363EDFE6EF9A1D4F /* Pods-FlanelinhaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlanelinhaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1138E6E4D89CADD24D2C64DF6AAFCD93 /* Pods-FlanelinhaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlanelinhaUITests.modulemap"; sourceTree = "<group>"; };
-		1C6200385182862E9168588E60B1CD37 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		12E9B683CC305DC72828F441F708C235 /* MapboxGeocoder.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapboxGeocoder.swift.modulemap; sourceTree = "<group>"; };
+		1385CF347D131FA8444C9CEBF459E3A4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154E97FF0DBF4AD7F4277D9D30EEBD09 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		17443D60DB2D49E56B1AF86B66445D78 /* Tailor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Tailor.modulemap; sourceTree = "<group>"; };
+		1825FC27E53A252536462576DC9E0FF7 /* MBRectangularRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRectangularRegion.swift; path = MapboxGeocoder/MBRectangularRegion.swift; sourceTree = "<group>"; };
 		1E99522CF2665ADBDBE2134C7BFF7215 /* Pods-FlanelinhaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlanelinhaUITests-umbrella.h"; sourceTree = "<group>"; };
+		21A4A345CE295B6353A5EF6195A738FB /* MBGeocoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeocoder.swift; path = MapboxGeocoder/MBGeocoder.swift; sourceTree = "<group>"; };
+		24F2A332D56580FCD0D6B5BB99B60FB3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F778F0B6D55B913CDB9B49A14CDB7F /* Pods-FlanelinhaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlanelinhaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2BBFB85F4336614C84F91F331DB0C9C5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		2FAF24E80A9607DF58238DCFD3E21BAD /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		39B85374D4D572F70936E5CAAAD0303B /* MapboxGeocoder.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapboxGeocoder.swift.xcconfig; sourceTree = "<group>"; };
 		39D85DA92E44A25DCD6BEACE22417C74 /* Pods-FlanelinhaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlanelinhaTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3FDBAE643F6568B6A72ECA1D5E945B06 /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlanelinhaUITests.framework; path = "Pods-FlanelinhaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40F65DC643126A23FA620B24F8B30920 /* Pods_FlanelinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlanelinhaTests.framework; path = "Pods-FlanelinhaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ADF9C308E19FC0DF900B6F9217CE9A8 /* HierarchyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HierarchyType.swift; path = Sources/Shared/Protocols/HierarchyType.swift; sourceTree = "<group>"; };
+		3F9DD51F86F08B9892BBDA8A8F040475 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		440A604AC98E226582A4218C1E407B78 /* Tailor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Tailor.framework; path = Tailor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		450795FB9E85655F3AC3AF3870E9131D /* Pods-FlanelinhaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlanelinhaTests-frameworks.sh"; sourceTree = "<group>"; };
 		46DCECDE2F0C38896D21CCD9B2A396B0 /* Pods-FlanelinhaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlanelinhaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		47F401B269900B46457A1BEDF4126C05 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Shared/Operators/Operators.swift; sourceTree = "<group>"; };
+		4B8C98F4A64E059215F0BE41990CD89C /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Sources/Shared/Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		4BC9CAEAB4916DE84EEF783EDDC7FA67 /* Tailor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Tailor-dummy.m"; sourceTree = "<group>"; };
+		509E95252A9B190F5F994EA832E6FAD3 /* MapboxGeocoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapboxGeocoder.framework; path = MapboxGeocoder.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A894532422D46DF12CEC7BA23F9C53 /* Pods-FlanelinhaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlanelinhaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		50ABA8B9105FB92B0C9B24B146087B7E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		518C21482640C2A69DABB31632BE5C40 /* Pods-Flanelinha-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flanelinha-resources.sh"; sourceTree = "<group>"; };
+		5AF7D8575F28491F9AE8D26AF58DB831 /* Tailor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tailor.swift; path = Sources/Shared/Tailor.swift; sourceTree = "<group>"; };
+		5B8AEAB58D1311643E399C4EF8EFA250 /* MBPlacemark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlacemark.swift; path = MapboxGeocoder/MBPlacemark.swift; sourceTree = "<group>"; };
 		5B9AA380C9E649E1E43F651806B12BE1 /* Pods-FlanelinhaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlanelinhaUITests-dummy.m"; sourceTree = "<group>"; };
+		5D6103695E6AA118657BA1DA97B65D08 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		5EB682171215738D848530FF58FE113C /* Pods-Flanelinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flanelinha.debug.xcconfig"; sourceTree = "<group>"; };
-		658C3282C6D213AE7627F7ADDF34D796 /* Pods_Flanelinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flanelinha.framework; path = "Pods-Flanelinha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		70324FDF1FBB41BEA92DE76E00BD3E96 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		5EE51C8D4D47FB4A0699F55CD5F4C218 /* Optional+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Optional+Extensions.swift"; path = "Sources/Shared/Extensions/Optional+Extensions.swift"; sourceTree = "<group>"; };
+		65E1C5153B33B9A772B51D642C8C766B /* SafeMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SafeMappable.swift; path = Sources/Shared/Protocols/SafeMappable.swift; sourceTree = "<group>"; };
+		67E6503D13FAD21D8F59E74AE7368E60 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		6BAB81AA15F0AB7A1C4B3F740F6D1E1D /* MapboxGeocoder.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxGeocoder.swift-prefix.pch"; sourceTree = "<group>"; };
+		7679B4A373BE648EF73CB612A36E36E8 /* Tailor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Tailor.xcconfig; sourceTree = "<group>"; };
+		7A3AD0BBA105C4B5665AEB8C84C0164A /* MBPlacemarkScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBPlacemarkScope.h; path = MapboxGeocoder/MBPlacemarkScope.h; sourceTree = "<group>"; };
 		7A80821290D2AA1140E8785E5A9A8072 /* Pods-FlanelinhaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlanelinhaTests-resources.sh"; sourceTree = "<group>"; };
 		7EC8AB4EB0DE42CE8CA49C6C3D83D69D /* Pods-Flanelinha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flanelinha-frameworks.sh"; sourceTree = "<group>"; };
+		80335EAC9FC3452E521C11746FECE29D /* MapboxGeocoder.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxGeocoder.swift-umbrella.h"; sourceTree = "<group>"; };
 		823AC7AA3506D93167097AC936B97C12 /* Pods-FlanelinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlanelinhaTests.release.xcconfig"; sourceTree = "<group>"; };
+		886EA99B4BA13F5EDD3C8A53AFC5E307 /* DefaultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultType.swift; path = Sources/Shared/Protocols/DefaultType.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99FEB944AA313B79D277BC1D40C860F7 /* Pods-Flanelinha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Flanelinha-dummy.m"; sourceTree = "<group>"; };
-		A65ED65616C5861E2765BDC60AAAF910 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		9AAD62A73059403239C1624D73895DF3 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlacemarkScope.swift; path = MapboxGeocoder/MBPlacemarkScope.swift; sourceTree = "<group>"; };
+		9F5A37602EF3C72D418E656BDA1E160A /* MapboxGeocoder.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapboxGeocoder.swift-dummy.m"; sourceTree = "<group>"; };
+		A0AE216356BE216FF96DE1205745541C /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlanelinhaUITests.framework; path = "Pods-FlanelinhaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4A0A1FF371400FE77F7BF0DD0EEF212 /* Array+Tailor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Tailor.swift"; path = "Sources/Shared/Extensions/Array+Tailor.swift"; sourceTree = "<group>"; };
 		A7A7BC02FBD7F7314A92E5F1DF269C82 /* Pods-Flanelinha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Flanelinha.modulemap"; sourceTree = "<group>"; };
-		A92DFDA40F47C0FD221B2872C31099A1 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		AAF38951394A82D49FF8F49A3CD5D506 /* Pods-Flanelinha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Flanelinha-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AC2D4C66D9BED0015FA532B15AFADFFD /* Pods-FlanelinhaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlanelinhaTests.modulemap"; sourceTree = "<group>"; };
-		B22C69ADCE7C9D529F11B17B4EF5E065 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		ACCDB67AC88ADC5A608013178D39579F /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		AF38839E2214C85EB64922E35002246B /* MapboxGeocoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MapboxGeocoder.h; path = MapboxGeocoder/MapboxGeocoder.h; sourceTree = "<group>"; };
 		B3FBB733EA9E0EE3420DA598ADBDB1E3 /* Pods-Flanelinha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Flanelinha-umbrella.h"; sourceTree = "<group>"; };
+		BD5E4B4F61D5F3DEE1F34B8533A188B2 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Shared/Protocols/Mappable.swift; sourceTree = "<group>"; };
+		C064183B59EF229BEFBA132FF6AE5DF8 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeocodeOptions.swift; path = MapboxGeocoder/MBGeocodeOptions.swift; sourceTree = "<group>"; };
+		CFDB625A0EA235CA8418CC05BCC4D546 /* Dictionary+Tailor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+Tailor.swift"; path = "Sources/Shared/Extensions/Dictionary+Tailor.swift"; sourceTree = "<group>"; };
 		D160E57F70FCC56AA928B8D24F298BAC /* Pods-Flanelinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flanelinha.release.xcconfig"; sourceTree = "<group>"; };
 		D17456A629E990A72A4FF3208A2E5F77 /* Pods-Flanelinha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Flanelinha-acknowledgements.plist"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D9960ED708F8994B20DACC9896BCE011 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD21220E072D188875C5E0A86E5D008 /* Pods_Flanelinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flanelinha.framework; path = "Pods-Flanelinha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E06F9E9C24907A22DA466807DA35E38C /* PathAccessible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathAccessible.swift; path = Sources/Shared/Protocols/PathAccessible.swift; sourceTree = "<group>"; };
 		E18C38F9F04DEBC2A15F308FF0F79AEE /* Pods-FlanelinhaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlanelinhaTests-dummy.m"; sourceTree = "<group>"; };
+		ECBC5654958305688F5820464DD41502 /* Tailor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Tailor-prefix.pch"; sourceTree = "<group>"; };
 		EEA635E9E59D20C0A7D91884C0F38C5B /* Pods-FlanelinhaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlanelinhaUITests-resources.sh"; sourceTree = "<group>"; };
+		F2C855440C318FEA266D8734AA36A090 /* Pods_FlanelinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlanelinhaTests.framework; path = "Pods-FlanelinhaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F361DFDCFBFBDA718A09F11F3F9B945A /* Pods-FlanelinhaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlanelinhaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F7599316F303DA45161936A32FA4814C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7B9D807B099C64C285ABD9D9EE52294 /* Tailor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Tailor-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +146,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		971A61B82816F33E34C352ED9E5CEECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402F7BD984FE3B7D5E653662D1597FD4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ADCDFB295B6AC3C16B927352EE3FD34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C94F3E4CDE886AE82CED70160A115C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0ECFB66448620626936F30910881ABD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,60 +170,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF502351171813FD98C9B3EFAB3406A6 /* Frameworks */ = {
+		F1AB0D2ABCB93FFDC0E28B3FA879E830 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5F5C019997F6269703717B42698B7AC /* Foundation.framework in Frameworks */,
+				9656FFD54E0AF1A4431ACE4D718B89D8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00B63D9B3EBC8ECAFD5DA8C24F1A42DF /* GooglePlaces */ = {
+		020B0F6362148FA1906ED1BC5246CBB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				475420FA59EFC8377CF994A338979247 /* Frameworks */,
-				09DB508F39D8BE758EA4A7B9047268E9 /* Resources */,
+				154E97FF0DBF4AD7F4277D9D30EEBD09 /* GooglePlaces.framework */,
 			);
-			name = GooglePlaces;
-			path = GooglePlaces;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		09DB508F39D8BE758EA4A7B9047268E9 /* Resources */ = {
+		1F1F3C4E61E3D535DCE907E0F47B0F82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A65ED65616C5861E2765BDC60AAAF910 /* GooglePlaces.bundle */,
+				ACCDB67AC88ADC5A608013178D39579F /* GooglePlaces.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		26C94CF6FBD559155351548F2127E7DB /* GoogleMaps */ = {
+		3223C1F972C61F22295246667646D806 /* Tailor */ = {
 			isa = PBXGroup;
 			children = (
-				B2F22323EA3B1ADB4F96376E3F709A68 /* Base */,
-				488E301C4ACDDA928635C4886F5F6158 /* Maps */,
+				A4A0A1FF371400FE77F7BF0DD0EEF212 /* Array+Tailor.swift */,
+				886EA99B4BA13F5EDD3C8A53AFC5E307 /* DefaultType.swift */,
+				CFDB625A0EA235CA8418CC05BCC4D546 /* Dictionary+Tailor.swift */,
+				3ADF9C308E19FC0DF900B6F9217CE9A8 /* HierarchyType.swift */,
+				BD5E4B4F61D5F3DEE1F34B8533A188B2 /* Mappable.swift */,
+				47F401B269900B46457A1BEDF4126C05 /* Operators.swift */,
+				5EE51C8D4D47FB4A0699F55CD5F4C218 /* Optional+Extensions.swift */,
+				E06F9E9C24907A22DA466807DA35E38C /* PathAccessible.swift */,
+				65E1C5153B33B9A772B51D642C8C766B /* SafeMappable.swift */,
+				4B8C98F4A64E059215F0BE41990CD89C /* String+Extensions.swift */,
+				5AF7D8575F28491F9AE8D26AF58DB831 /* Tailor.swift */,
+				93FD95DC1D60BD7798C1EC52FD779552 /* Support Files */,
 			);
-			name = GoogleMaps;
-			path = GoogleMaps;
+			name = Tailor;
+			path = Tailor;
 			sourceTree = "<group>";
 		};
-		343584E22C57489C672A8E6F731CB43A /* Resources */ = {
+		33C54776CD4E16BC35BF8B0E5E6979F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C6200385182862E9168588E60B1CD37 /* GoogleMaps.bundle */,
+				3F9DD51F86F08B9892BBDA8A8F040475 /* GoogleMapsBase.framework */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		385FA015FFB9210F372AB1078B856AAB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				26C94CF6FBD559155351548F2127E7DB /* GoogleMaps */,
-				00B63D9B3EBC8ECAFD5DA8C24F1A42DF /* GooglePlaces */,
-			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3F3F0111D0F040CA72B07AACD7BA1271 /* Pods-Flanelinha */ = {
@@ -161,29 +251,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		475420FA59EFC8377CF994A338979247 /* Frameworks */ = {
+		742C45673980CC12F89414F3F9049ECF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				70324FDF1FBB41BEA92DE76E00BD3E96 /* GooglePlaces.framework */,
+				F2762615ABE4B2E277154CE4364A8972 /* GoogleMaps */,
+				DFBF4F1782E25312DDF983A59817610D /* GooglePlaces */,
+				E4D71D50F6BF7A548E5AAEA49336AA9A /* MapboxGeocoder.swift */,
+				3223C1F972C61F22295246667646D806 /* Tailor */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		488E301C4ACDDA928635C4886F5F6158 /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-				82CE66B3B7EC3F6274BF43A52FEEAE6E /* Frameworks */,
-				343584E22C57489C672A8E6F731CB43A /* Resources */,
-			);
-			name = Maps;
-			sourceTree = "<group>";
-		};
-		4CFA8C2E94378AFFDBA3DF92FBE7E3DC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B22C69ADCE7C9D529F11B17B4EF5E065 /* GoogleMapsBase.framework */,
-			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		74F93A35249FCF8D8E0BF6708CBA7FCD /* Pods-FlanelinhaTests */ = {
@@ -204,42 +280,38 @@
 			path = "Target Support Files/Pods-FlanelinhaTests";
 			sourceTree = "<group>";
 		};
+		7D95FE0A77164D2214D2D96C5DD106E8 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				FD5FBE98B1C963B833FE4123A4F3CC10 /* Frameworks */,
+				CB4EF5CBE12612CBD99F47D6C836EE32 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				385FA015FFB9210F372AB1078B856AAB /* Pods */,
-				B28844662FD3F25F8159D75DCD155EBD /* Products */,
+				742C45673980CC12F89414F3F9049ECF /* Pods */,
+				FB932C9A0F78C2E22FDB0D8BEB9710CD /* Products */,
 				F983662B5C44EEAA6CDDA2CC0C938E2E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		82CE66B3B7EC3F6274BF43A52FEEAE6E /* Frameworks */ = {
+		93FD95DC1D60BD7798C1EC52FD779552 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				08F1229163C7F5E61C7C4B361510F11C /* GoogleMaps.framework */,
-				A92DFDA40F47C0FD221B2872C31099A1 /* GoogleMapsCore.framework */,
+				24F2A332D56580FCD0D6B5BB99B60FB3 /* Info.plist */,
+				17443D60DB2D49E56B1AF86B66445D78 /* Tailor.modulemap */,
+				7679B4A373BE648EF73CB612A36E36E8 /* Tailor.xcconfig */,
+				4BC9CAEAB4916DE84EEF783EDDC7FA67 /* Tailor-dummy.m */,
+				ECBC5654958305688F5820464DD41502 /* Tailor-prefix.pch */,
+				F7B9D807B099C64C285ABD9D9EE52294 /* Tailor-umbrella.h */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B28844662FD3F25F8159D75DCD155EBD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				658C3282C6D213AE7627F7ADDF34D796 /* Pods_Flanelinha.framework */,
-				40F65DC643126A23FA620B24F8B30920 /* Pods_FlanelinhaTests.framework */,
-				3FDBAE643F6568B6A72ECA1D5E945B06 /* Pods_FlanelinhaUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B2F22323EA3B1ADB4F96376E3F709A68 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				4CFA8C2E94378AFFDBA3DF92FBE7E3DC /* Frameworks */,
-			);
-			name = Base;
+			name = "Support Files";
+			path = "../Target Support Files/Tailor";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -248,6 +320,46 @@
 				44D5347904CF754D6785B84253F2574A /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB4EF5CBE12612CBD99F47D6C836EE32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BBFB85F4336614C84F91F331DB0C9C5 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D44A7DBAF14B0BA5F0F920219667A75B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				33C54776CD4E16BC35BF8B0E5E6979F8 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		DD1BE2C5E0F5B00772939816F78E02D8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1385CF347D131FA8444C9CEBF459E3A4 /* Info.plist */,
+				12E9B683CC305DC72828F441F708C235 /* MapboxGeocoder.swift.modulemap */,
+				39B85374D4D572F70936E5CAAAD0303B /* MapboxGeocoder.swift.xcconfig */,
+				9F5A37602EF3C72D418E656BDA1E160A /* MapboxGeocoder.swift-dummy.m */,
+				6BAB81AA15F0AB7A1C4B3F740F6D1E1D /* MapboxGeocoder.swift-prefix.pch */,
+				80335EAC9FC3452E521C11746FECE29D /* MapboxGeocoder.swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MapboxGeocoder.swift";
+			sourceTree = "<group>";
+		};
+		DFBF4F1782E25312DDF983A59817610D /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				020B0F6362148FA1906ED1BC5246CBB7 /* Frameworks */,
+				1F1F3C4E61E3D535DCE907E0F47B0F82 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
 		E1FCC06C2915C19C03F0EE31B7E0934A /* Pods-FlanelinhaUITests */ = {
@@ -268,6 +380,33 @@
 			path = "Target Support Files/Pods-FlanelinhaUITests";
 			sourceTree = "<group>";
 		};
+		E4D71D50F6BF7A548E5AAEA49336AA9A /* MapboxGeocoder.swift */ = {
+			isa = PBXGroup;
+			children = (
+				0B1F3CB7D763B75C073E8A789DF2EFBB /* CoreLocation.swift */,
+				AF38839E2214C85EB64922E35002246B /* MapboxGeocoder.h */,
+				C064183B59EF229BEFBA132FF6AE5DF8 /* MBGeocodeOptions.swift */,
+				21A4A345CE295B6353A5EF6195A738FB /* MBGeocoder.swift */,
+				5B8AEAB58D1311643E399C4EF8EFA250 /* MBPlacemark.swift */,
+				7A3AD0BBA105C4B5665AEB8C84C0164A /* MBPlacemarkScope.h */,
+				9AAD62A73059403239C1624D73895DF3 /* MBPlacemarkScope.swift */,
+				1825FC27E53A252536462576DC9E0FF7 /* MBRectangularRegion.swift */,
+				DD1BE2C5E0F5B00772939816F78E02D8 /* Support Files */,
+			);
+			name = MapboxGeocoder.swift;
+			path = MapboxGeocoder.swift;
+			sourceTree = "<group>";
+		};
+		F2762615ABE4B2E277154CE4364A8972 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				D44A7DBAF14B0BA5F0F920219667A75B /* Base */,
+				7D95FE0A77164D2214D2D96C5DD106E8 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
 		F983662B5C44EEAA6CDDA2CC0C938E2E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,22 +417,61 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		FB932C9A0F78C2E22FDB0D8BEB9710CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				509E95252A9B190F5F994EA832E6FAD3 /* MapboxGeocoder.framework */,
+				DCD21220E072D188875C5E0A86E5D008 /* Pods_Flanelinha.framework */,
+				F2C855440C318FEA266D8734AA36A090 /* Pods_FlanelinhaTests.framework */,
+				A0AE216356BE216FF96DE1205745541C /* Pods_FlanelinhaUITests.framework */,
+				440A604AC98E226582A4218C1E407B78 /* Tailor.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD5FBE98B1C963B833FE4123A4F3CC10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67E6503D13FAD21D8F59E74AE7368E60 /* GoogleMaps.framework */,
+				5D6103695E6AA118657BA1DA97B65D08 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		09358F76D1C85C3A9C38B7B82E55FA3B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFBEFC092BE95806A6D5F4D5C463D38F /* Pods-Flanelinha-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		43D5E6B192D7037814B043683799216B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E308A6B70CE12D009628E65414EAAF04 /* Pods-FlanelinhaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93B428AB9868B187D9ED232A3774F54C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75647C63D3ADCBEC6A600E9656BF3A29 /* Pods-Flanelinha-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C41890CFA45AFC4B8CC0852C4D63A6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5293974A1C136E32E56D4F7AF922D16C /* Tailor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B43DE8EC5BBF281B49A6D1902F1D7CA2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16431F2363F21E25AEB6C76E0DFBFC4F /* MapboxGeocoder.h in Headers */,
+				272539ED226AD9C5E0D7571A03B79810 /* MapboxGeocoder.swift-umbrella.h in Headers */,
+				69E7678F05150D9A7A835337238C21FF /* MBPlacemarkScope.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,22 +486,60 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4127D407C218D2D624BE49065F55C132 /* Pods-Flanelinha */ = {
+		18DDF3C44DDDF05DDA7AD6036798FCCD /* Tailor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5290E85EBD82108ADC7BBDAD152E4FCD /* Build configuration list for PBXNativeTarget "Pods-Flanelinha" */;
+			buildConfigurationList = A481AD0975FFFB8D3C61F73E8ABF7026 /* Build configuration list for PBXNativeTarget "Tailor" */;
 			buildPhases = (
-				09358F76D1C85C3A9C38B7B82E55FA3B /* Headers */,
-				FCDB84732904D92A53E48F4A1DD919C4 /* Sources */,
-				AF502351171813FD98C9B3EFAB3406A6 /* Frameworks */,
-				B6A180F2C69ADB748DF709A7BCCA5838 /* Resources */,
+				9C41890CFA45AFC4B8CC0852C4D63A6B /* Headers */,
+				ED3CC27437C1FF0004DB8F43C256E422 /* Sources */,
+				971A61B82816F33E34C352ED9E5CEECD /* Frameworks */,
+				461847DC6206715A24EF63EBA977F355 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = Tailor;
+			productName = Tailor;
+			productReference = 440A604AC98E226582A4218C1E407B78 /* Tailor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4486FE3614883F5AD5F9108D6F6E90CE /* Pods-Flanelinha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792C0773C6E035D10BD35CF18CCFA834 /* Build configuration list for PBXNativeTarget "Pods-Flanelinha" */;
+			buildPhases = (
+				93B428AB9868B187D9ED232A3774F54C /* Headers */,
+				948509B67A8F16F17B672F0D891097A5 /* Sources */,
+				F1AB0D2ABCB93FFDC0E28B3FA879E830 /* Frameworks */,
+				5F782CDFB4CD8B71BF2FDF83C9171FF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				958F9EABB238D7B8C1D6C006B9E4694D /* PBXTargetDependency */,
+				7799B311A9317948664AF483946C1BA7 /* PBXTargetDependency */,
+			);
 			name = "Pods-Flanelinha";
 			productName = "Pods-Flanelinha";
-			productReference = 658C3282C6D213AE7627F7ADDF34D796 /* Pods_Flanelinha.framework */;
+			productReference = DCD21220E072D188875C5E0A86E5D008 /* Pods_Flanelinha.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D093AF1394962F28FDFD3FAADE6EE222 /* MapboxGeocoder.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC8BB3DD0FDA55088E45A1D137A0BC1 /* Build configuration list for PBXNativeTarget "MapboxGeocoder.swift" */;
+			buildPhases = (
+				B43DE8EC5BBF281B49A6D1902F1D7CA2 /* Headers */,
+				0F2CA0C22EB5C6FC2BA6A926486F04A5 /* Sources */,
+				9ADCDFB295B6AC3C16B927352EE3FD34 /* Frameworks */,
+				3BBEBCF159600D48D96E81F377EA4638 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapboxGeocoder.swift;
+			productName = MapboxGeocoder.swift;
+			productReference = 509E95252A9B190F5F994EA832E6FAD3 /* MapboxGeocoder.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D7F3CF886C4B98985A11BF2D3F71694A /* Pods-FlanelinhaUITests */ = {
@@ -341,7 +557,7 @@
 			);
 			name = "Pods-FlanelinhaUITests";
 			productName = "Pods-FlanelinhaUITests";
-			productReference = 3FDBAE643F6568B6A72ECA1D5E945B06 /* Pods_FlanelinhaUITests.framework */;
+			productReference = A0AE216356BE216FF96DE1205745541C /* Pods_FlanelinhaUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F4315ED48F2B48F416AA7D97D75E5AF2 /* Pods-FlanelinhaTests */ = {
@@ -359,7 +575,7 @@
 			);
 			name = "Pods-FlanelinhaTests";
 			productName = "Pods-FlanelinhaTests";
-			productReference = 40F65DC643126A23FA620B24F8B30920 /* Pods_FlanelinhaTests.framework */;
+			productReference = F2C855440C318FEA266D8734AA36A090 /* Pods_FlanelinhaTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -379,19 +595,28 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B28844662FD3F25F8159D75DCD155EBD /* Products */;
+			productRefGroup = FB932C9A0F78C2E22FDB0D8BEB9710CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4127D407C218D2D624BE49065F55C132 /* Pods-Flanelinha */,
+				D093AF1394962F28FDFD3FAADE6EE222 /* MapboxGeocoder.swift */,
+				4486FE3614883F5AD5F9108D6F6E90CE /* Pods-Flanelinha */,
 				F4315ED48F2B48F416AA7D97D75E5AF2 /* Pods-FlanelinhaTests */,
 				D7F3CF886C4B98985A11BF2D3F71694A /* Pods-FlanelinhaUITests */,
+				18DDF3C44DDDF05DDA7AD6036798FCCD /* Tailor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2DF589DEB5CACC741AB42CC692D18D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBEBCF159600D48D96E81F377EA4638 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -405,7 +630,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6A180F2C69ADB748DF709A7BCCA5838 /* Resources */ = {
+		461847DC6206715A24EF63EBA977F355 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F782CDFB4CD8B71BF2FDF83C9171FF8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,11 +647,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0F2CA0C22EB5C6FC2BA6A926486F04A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87EC1CB90BDE6691C7E5E920BA04A64E /* CoreLocation.swift in Sources */,
+				F8D5AD0B3E63490AC43B785A26AA312A /* MapboxGeocoder.swift-dummy.m in Sources */,
+				D51228763220CBF94048C3BE9E8D1B57 /* MBGeocodeOptions.swift in Sources */,
+				AC57AA3ACE776F5442576ADB4E89C47A /* MBGeocoder.swift in Sources */,
+				2DE01FDDFDA3B846E1A67AFEB59F9E50 /* MBPlacemark.swift in Sources */,
+				2F3E22843298E715E59FBA7422DF12DC /* MBPlacemarkScope.swift in Sources */,
+				BEEEA95BB55FDA1E5380AE964CD2E692 /* MBRectangularRegion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50747D0DEA5DEA3A874677DA51686BA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D165413DA5AF90A8EDB0881A7BF7B600 /* Pods-FlanelinhaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		948509B67A8F16F17B672F0D891097A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585572CF3BC1077BA545E71E56C88368 /* Pods-Flanelinha-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,17 +685,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCDB84732904D92A53E48F4A1DD919C4 /* Sources */ = {
+		ED3CC27437C1FF0004DB8F43C256E422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12EB1270667978BC88D14DD955A72BD4 /* Pods-Flanelinha-dummy.m in Sources */,
+				4B303C72588445B5E4066D88EB0FB323 /* Array+Tailor.swift in Sources */,
+				EF4B80818F798477AFBAA2DB38E6B73A /* DefaultType.swift in Sources */,
+				C8DFFE0AB1BC89B0FBB7125574543732 /* Dictionary+Tailor.swift in Sources */,
+				04DF9A04B53FDA600675C0FA10D0C57F /* HierarchyType.swift in Sources */,
+				4ADAA7056A37D9A50637996EB19BF4E9 /* Mappable.swift in Sources */,
+				5CA030BE9BCFC345E5B17D678E9E225F /* Operators.swift in Sources */,
+				822D3A4C0ED6BBA7FE70570A3DA95598 /* Optional+Extensions.swift in Sources */,
+				C54A455D513408D54FAEC967B9349B58 /* PathAccessible.swift in Sources */,
+				2BF61E2472FF03A58CB1D2429ED33CE4 /* SafeMappable.swift in Sources */,
+				559497DB6D15B4553F48EA79D411526C /* String+Extensions.swift in Sources */,
+				A92283A4D7CCF27136B35AEBEF6BEF6D /* Tailor-dummy.m in Sources */,
+				963E560846DE662AA6E3B3E50AC72A4E /* Tailor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7799B311A9317948664AF483946C1BA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Tailor;
+			target = 18DDF3C44DDDF05DDA7AD6036798FCCD /* Tailor */;
+			targetProxy = 826734AE458F69B67ACE703F660EBFEE /* PBXContainerItemProxy */;
+		};
+		958F9EABB238D7B8C1D6C006B9E4694D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapboxGeocoder.swift;
+			target = D093AF1394962F28FDFD3FAADE6EE222 /* MapboxGeocoder.swift */;
+			targetProxy = F4533E86B41C3D0E6CD015D0C50AAEDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0C062F2517B266DD09ECF49920287050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7679B4A373BE648EF73CB612A36E36E8 /* Tailor.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Tailor/Tailor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Tailor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Tailor/Tailor.modulemap";
+				PRODUCT_NAME = Tailor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0F22C48CD54DB1B45D5531F0FEA768BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -682,7 +997,113 @@
 			};
 			name = Release;
 		};
-		9052CF70BF7BABDC65BEDEBACE019458 /* Release */ = {
+		973056195107245C9907ADEFB47B2395 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7679B4A373BE648EF73CB612A36E36E8 /* Tailor.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Tailor/Tailor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Tailor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Tailor/Tailor.modulemap";
+				PRODUCT_NAME = Tailor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B336CB36121CF06285CB59C7E134EA22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B85374D4D572F70936E5CAAAD0303B /* MapboxGeocoder.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapboxGeocoder.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift.modulemap";
+				PRODUCT_NAME = MapboxGeocoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BBF529F49B7B606CF29CFEA6E222C9A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB682171215738D848530FF58FE113C /* Pods-Flanelinha.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Flanelinha/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Flanelinha/Pods-Flanelinha.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Flanelinha;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF2754A5DFE1023D8D23FE0BA58BB47E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D160E57F70FCC56AA928B8D24F298BAC /* Pods-Flanelinha.release.xcconfig */;
 			buildSettings = {
@@ -719,43 +1140,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		C12883579FA89705E758E4AB92F23ABB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EB682171215738D848530FF58FE113C /* Pods-Flanelinha.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Flanelinha/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Flanelinha/Pods-Flanelinha.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Flanelinha;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		D58CF4C302634BA37FBC17E7EFA532BD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -795,6 +1179,40 @@
 			};
 			name = Release;
 		};
+		FE2EB0E32D49D5E802FE5AB5B69EFD08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B85374D4D572F70936E5CAAAD0303B /* MapboxGeocoder.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapboxGeocoder.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift.modulemap";
+				PRODUCT_NAME = MapboxGeocoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -807,11 +1225,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5290E85EBD82108ADC7BBDAD152E4FCD /* Build configuration list for PBXNativeTarget "Pods-Flanelinha" */ = {
+		792C0773C6E035D10BD35CF18CCFA834 /* Build configuration list for PBXNativeTarget "Pods-Flanelinha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C12883579FA89705E758E4AB92F23ABB /* Debug */,
-				9052CF70BF7BABDC65BEDEBACE019458 /* Release */,
+				BBF529F49B7B606CF29CFEA6E222C9A5 /* Debug */,
+				CF2754A5DFE1023D8D23FE0BA58BB47E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -830,6 +1248,24 @@
 			buildConfigurations = (
 				13D7B5CACB26CE61B2161F64AE23210C /* Debug */,
 				D58CF4C302634BA37FBC17E7EFA532BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A481AD0975FFFB8D3C61F73E8ABF7026 /* Build configuration list for PBXNativeTarget "Tailor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973056195107245C9907ADEFB47B2395 /* Debug */,
+				0C062F2517B266DD09ECF49920287050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC8BB3DD0FDA55088E45A1D137A0BC1 /* Build configuration list for PBXNativeTarget "MapboxGeocoder.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE2EB0E32D49D5E802FE5AB5B69EFD08 /* Debug */,
+				B336CB36121CF06285CB59C7E134EA22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

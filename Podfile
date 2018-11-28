@@ -8,6 +8,8 @@ target 'Flanelinha' do
   # Pods for Flanelinha
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'MapboxGeocoder.swift'
+  pod 'Tailor'
 
   target 'FlanelinhaTests' do
     inherit! :search_paths

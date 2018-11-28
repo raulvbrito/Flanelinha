@@ -9,21 +9,26 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import MapboxGeocoder
 
 class MapViewController: UIViewController {
 
 	// MARK: - Properties
 	
 	@IBOutlet weak var mapView: GMSMapView!
+	
 	@IBOutlet weak var searchTextField: UITextField!
 	@IBOutlet weak var searchTextFieldTopConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldHeightConstraint: NSLayoutConstraint!
+	
 	@IBOutlet weak var locationListView: UIView!
 	@IBOutlet weak var locationListViewTopConstraint: NSLayoutConstraint!
 	@IBOutlet weak var locationListViewLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var locationListViewHeightConstraint: NSLayoutConstraint!
+	
 	@IBOutlet weak var locationTableView: UITableView!
+	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 	
@@ -36,13 +41,16 @@ class MapViewController: UIViewController {
 	let parkingMarker3 = GMSMarker()
 	let parkingMarker4 = GMSMarker()
 	
+	private let geocoder = Geocoder.shared
+	
 	private let parkingMarkerView = Bundle.main.loadNibNamed("ParkingMarkerView", owner: nil, options: nil)?.first as! ParkingMarkerView
 	
 	private var lastLocation: CLLocation?
 	
 	private var currentLocationMarkerShadowLayer: CAShapeLayer!
 	
-	private var locations: [GMSAutocompletePrediction] = []
+//	private var locations: [GMSAutocompletePrediction] = []
+	private var locations: [Location] = []
 	
 	private var translationY: CGFloat = 0.0
 	
@@ -112,24 +120,103 @@ class MapViewController: UIViewController {
 	}
 	
 	func placeAutocomplete(searchText: String) {
-		let filter = GMSAutocompleteFilter()
-		filter.country = "BR"
+//		let visibleRegion = self.mapView.projection.visibleRegion()
+//		let bounds = GMSCoordinateBounds(coordinate: visibleRegion.farLeft, coordinate: visibleRegion.nearRight)
+//
+//		let filter = GMSAutocompleteFilter()
+//		filter.country = Locale.current.regionCode
+//
+//		let placesClient = GMSPlacesClient()
+//		placesClient.autocompleteQuery(searchText, bounds: bounds, filter: filter, callback: {(results, error) -> Void in
+//			if let error = error {
+//				print("Autocomplete error \(error)")
+//				return
+//			}
+//			if let results = results {
+//				self.locations = results
+//				for result in results {
+//					print("Result \(result.attributedFullText) with placeID \(String(describing: result.placeID))")
+//				}
+//
+//				self.locationTableView.reloadData()
+//			}
+//		})
 		
-		let placesClient = GMSPlacesClient()
-		placesClient.autocompleteQuery(searchText, bounds: nil, filter: filter, callback: {(results, error) -> Void in
-			if let error = error {
-				print("Autocomplete error \(error)")
-				return
-			}
-			if let results = results {
-				self.locations = results
-				for result in results {
-					print("Result \(result.attributedFullText) with placeID \(String(describing: result.placeID))")
-				}
+		let options = ForwardGeocodeOptions(query: searchText)
+		
+        options.allowedISOCountryCodes = ["BR"]
+        options.focalLocation = CLLocation(latitude: lastLocation?.coordinate.latitude ?? 0, longitude: lastLocation?.coordinate.longitude ?? 0)
+        options.allowedScopes = [.address, .pointOfInterest]
+		
+        let task = geocoder.geocode(options) { (placemarks, attribution, error) in
+            if let placemarks = placemarks {
+                self.locations.removeAll()
 				
-				self.locationTableView.reloadData()
-			}
-		})
+                var location = [
+                    "Title": "",
+                    "Subtitle": "",
+                    "Latitude": 0,
+                    "Longitude": 0
+                    ] as [String : Any]
+				
+                for placemark in placemarks {
+					print("Place \(placemark)")
+					print("Place addressDictionary \(String(describing: placemark.addressDictionary))")
+					print("Place formattedName \(placemark.formattedName)")
+					print("Place genres \(String(describing: placemark.genres))")
+					print("Place imageName \(String(describing: placemark.imageName))")
+					print("Place phoneNumber \(String(describing: placemark.phoneNumber))")
+					print("Place postalAddress \(String(describing: placemark.postalAddress))")
+					print("Place relevance \(placemark.relevance)")
+					
+                    var subtitle = ""
+					
+                    if #available(iOS 10.3, *) {
+                        if placemark.postalAddress?.subLocality != "" {
+                            subtitle += placemark.postalAddress!.subLocality
+                        }
+						
+                        if placemark.postalAddress?.subAdministrativeArea != "" {
+                            if subtitle != "" {
+                                subtitle += ", "
+                            }
+							
+                            subtitle += placemark.postalAddress!.subAdministrativeArea
+                        }
+                    }
+					
+                    if placemark.postalAddress?.city != "" {
+                        if subtitle != "" {
+                            subtitle += ", "
+                        }
+						
+                        subtitle += placemark.postalAddress!.city
+                    }
+					
+                    if placemark.postalAddress?.state != "" {
+                        if subtitle != "" {
+                            subtitle += " - "
+                        }
+						
+                        subtitle += placemark.postalAddress!.state
+                    }
+					
+                    location["Title"] = placemark.formattedName
+                    location["Subtitle"] = subtitle
+					location["Genre"] = placemark.genres?[0]
+					location["Latitude"] = placemark.location?.coordinate.latitude
+					location["Longitude"] = placemark.location?.coordinate.longitude
+					location["Location"] = CLLocationCoordinate2D(latitude: placemark.location?.coordinate.latitude ?? 0, longitude: placemark.location?.coordinate.longitude ?? 0)
+					
+                    self.locations.append(Location(location))
+                }
+				
+                self.locationTableView.reloadData()
+            }
+			
+        }
+		
+        task.resume()
 	}
 	
 	func createPanGestureRecognizer(targetView: UIView) {
@@ -205,6 +292,8 @@ class MapViewController: UIViewController {
 		self.searchTextFieldLeadingConstraint.constant = 24
 		self.searchTextFieldHeightConstraint.constant = 60
 		self.collectionViewBottomConstraint.constant = 23
+		self.locationListViewTopConstraint.constant = 750
+		self.locationListViewLeadingConstraint.constant = 0
 		
 		UIView.animate(withDuration: 0.3) {
 			self.view.layoutIfNeeded()
@@ -317,10 +406,79 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 		bgColorView.backgroundColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
 		cell?.selectedBackgroundView = bgColorView
 		
+		cell?.affiliateParkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
+		
 		if locations.count > indexPath.row {
-			cell?.locationNameLabel.text = locations[indexPath.row].attributedPrimaryText.string
-			cell?.locationAddressLabel.text = locations[indexPath.row].attributedSecondaryText?.string
+			cell?.locationNameLabel.text = self.locations[indexPath.row].Title
+			cell?.locationAddressLabel.text = self.locations[indexPath.row].Subtitle
+			
+			if self.locations[indexPath.row].Genre == "parking" {
+				cell?.locationSymbolImageView.isHidden = true
+				cell?.parkingSymbolView.isHidden = false
+				
+				cell?.locationSymbolImageView.isHidden = true
+
+				let isAffiliate = Bool.random()
+			
+				cell?.parkingSymbolView.isHidden = isAffiliate
+				cell?.affiliateParkingSymbolView.isHidden = !isAffiliate
+				
+//				if Bool.random() {
+//					cell?.locationSymbolImageView.isHidden = true
+//					cell?.parkingSymbolView.isHidden = true
+//					cell?.affiliateParkingSymbolView.isHidden = false
+//
+//					cell?.parkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
+//					cell?.parkingSymbolLabel.textColor = .white
+//				} else {
+//					cell?.locationSymbolImageView.isHidden = true
+//					cell?.parkingSymbolView.isHidden = false
+//					cell?.affiliateParkingSymbolView.isHidden = true
+//
+//					cell?.parkingSymbolView.backgroundColor = .white
+//					cell?.parkingSymbolLabel.textColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1)
+//				}
+			} else {
+				cell?.locationSymbolImageView.isHidden = false
+				cell?.parkingSymbolView.isHidden = true
+				cell?.affiliateParkingSymbolView.isHidden = true
+			}
+			
+//			let placesClient = GMSPlacesClient()
+//			placesClient.lookUpPlaceID(locations[indexPath.row].placeID ?? "", callback: { (place, error) -> Void in
+//				if let error = error {
+//					print("lookup place id query error: \(error.localizedDescription)")
+//					return
+//				}
+//
+//				guard let place = place else {
+//					print("No place details for \(String(describing: self.locations[indexPath.row].placeID))")
+//					return
+//				}
+//
+//				cell?.locationNameLabel.text = self.locations[indexPath.row].attributedPrimaryText.string
+//				cell?.locationAddressLabel.text = self.locations[indexPath.row].attributedSecondaryText?.string
+//
+//				print("Place details type \(place.types[0])")
+//
+//				if place.types[0] == "parking" {
+//					cell?.locationSymbolImageView.isHidden = true
+//					cell?.parkingSymbolView.isHidden = false
+//
+//					if Bool.random() {
+//						cell?.parkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
+//						cell?.parkingSymbolLabel.textColor = .white
+//					} else {
+//						cell?.parkingSymbolView.backgroundColor = .white
+//						cell?.parkingSymbolLabel.textColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1)
+//					}
+//				} else {
+//					cell?.locationSymbolImageView.isHidden = false
+//					cell?.parkingSymbolView.isHidden = true
+//				}
+//			})
 		} else {
+			cell?.locationSymbolImageView.isHidden = false
 			cell?.locationNameLabel.text = "Defina o local no mapa"
 			cell?.locationAddressLabel.text = ""
 		}
@@ -331,8 +489,34 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		locationTableView.deselectRow(at: indexPath, animated: true)
 		
-//		locations[indexPath.row].
-//		print(GMSPlacesClient.lookUpPlaceID(locations[indexPath.row].placeID ))
+		print(locations[indexPath.row])
+		
+//		let placesClient = GMSPlacesClient()
+//		placesClient.lookUpPlaceID(locations[indexPath.row].placeID ?? "", callback: { (place, error) -> Void in
+//			if let error = error {
+//				print("lookup place id query error: \(error.localizedDescription)")
+//				return
+//			}
+//
+//			guard let place = place else {
+//				print("No place details for \(String(describing: self.locations[indexPath.row].placeID))")
+//				return
+//			}
+//
+//			print("Place \(place)")
+//			print("Place name \(place.name)")
+//			print("Place address \(String(describing: place.formattedAddress))")
+//			print("Place placeID \(place.placeID)")
+//			print("Place coordinates \(place.coordinate)")
+//			print("Place address components \(String(describing: place.addressComponents))")
+//			print("Place open now status \(place.openNowStatus)")
+//			print("Place phone number \(String(describing: place.phoneNumber))")
+//			print("Place price level \(place.priceLevel.rawValue)")
+//			print("Place viewport \(String(describing: place.viewport))")
+//			print("Place viewport \(place.types)")
+//			print("Place attributions \(String(describing: place.attributions))")
+//		})
+//		print(GMSPlacesClient.lookUpPlaceID(locations[indexPath.row].placeID))
 	}
 }
 

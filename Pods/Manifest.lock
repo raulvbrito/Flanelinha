@@ -6,15 +6,21 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - MapboxGeocoder.swift (0.10.0)
+  - Tailor (3.0.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - MapboxGeocoder.swift
+  - Tailor
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  MapboxGeocoder.swift: fc21bff95696aa618c396bd472ef0924ba9ccd2e
+  Tailor: 4fb574e8815d076abbf2bd7ffdbf4b14103fe17c
 
-PODFILE CHECKSUM: 08f608d50f88d1ed10f1cf1c1d5aa515592b7c7e
+PODFILE CHECKSUM: e888006799b2e304e9f604e1d9dd94570e90b6fa
 
 COCOAPODS: 1.4.0

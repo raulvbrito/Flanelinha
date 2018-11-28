@@ -11,7 +11,7 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 
-let googleApiKey = "AIzaSyBEysu3pWzYmr9O2fNcFX6331M3MHA3H_E"
+let googleApiKey = "AIzaSyB5DlfbduHVevhhzEu9umOjWBefUrQMWRw"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

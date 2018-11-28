@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */; };
+		413A796321AEFF22001D79DD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A796221AEFF22001D79DD /* Location.swift */; };
 		4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */; };
 		417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 417453B621A84EDF00918180 /* ParkingMarkerView.xib */; };
 		417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413A796221AEFF22001D79DD /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		417453B621A84EDF00918180 /* ParkingMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkingMarkerView.xib; sourceTree = "<group>"; };
 		417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMarkerView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 				2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		413A796121AEFF0D001D79DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				413A796221AEFF22001D79DD /* Location.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		419FF3E521A5E22800977C34 /* Views */ = {
@@ -197,9 +207,9 @@
 		41AC3CDC21A326FC00A32DCC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				419FF3E521A5E22800977C34 /* Views */,
 				41AC3CE021A327C700A32DCC /* Data */,
 				41AC3CDD21A3271300A32DCC /* View Controllers */,
+				419FF3E521A5E22800977C34 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				41AC3CE121A327E400A32DCC /* Core Data */,
+				413A796121AEFF0D001D79DD /* Models */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -470,9 +481,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MapboxGeocoder.swift/MapboxGeocoder.framework",
+				"${BUILT_PRODUCTS_DIR}/Tailor/Tailor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxGeocoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tailor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,6 +570,7 @@
 			files = (
 				41AC3CB221A31E9300A32DCC /* Flanelinha.xcdatamodeld in Sources */,
 				4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */,
+				413A796321AEFF22001D79DD /* Location.swift in Sources */,
 				417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */,
 				41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */,
 				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
