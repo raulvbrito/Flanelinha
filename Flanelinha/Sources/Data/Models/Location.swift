@@ -12,19 +12,21 @@ import CoreLocation
 
 struct Location: Mappable {
 	
-    var Title: String!
-    var Subtitle: String!
-    var Genre: String!
-    var Latitude: Double!
-    var Longitude: Double!
-    var Location: CLLocationCoordinate2D!
+    var title: String!
+    var subtitle: String!
+    var genre: String!
+    var isAffiliate: Bool!
+    var latitude: Double!
+    var longitude: Double!
+    var location: CLLocationCoordinate2D!
 	
     init(_ map: [String : Any]) {
-        Title <- map.property("Title")
-        Subtitle <- map.property("Subtitle")
-        Genre <- map.property("Genre")
-        Latitude <- map.property("Latitude")
-        Longitude <- map.property("Longitude")
-        Location <- map.property("Location")
+        title <- map.property("title")
+        subtitle <- map.property("subtitle")
+        genre <- map.property("genre")
+        isAffiliate <- map.property("isAffiliate")
+        latitude <- map.property("latitude")
+        longitude <- map.property("longitude")
+        location <- map.property("location")
     }
 }

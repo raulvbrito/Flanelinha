@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ParkingMarkerView: UIView {
+class SelectedParkingMarkerView: UIView {
 
 	@IBOutlet weak var parkingSignView: UIView!
 	@IBOutlet weak var parkingSignLabel: UILabel!
-	@IBOutlet weak var priceLabel: UILabel!
 	
 }

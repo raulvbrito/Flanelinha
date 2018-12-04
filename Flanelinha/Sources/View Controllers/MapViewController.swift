@@ -11,16 +11,39 @@ import GoogleMaps
 import GooglePlaces
 import MapboxGeocoder
 
+enum PulsingViewAnimation: String {
+	case animating
+	case notAnimating
+}
+
+enum SearchStatus: String {
+	case searchClosed
+	case searchOpen
+	case searching
+	case resultSelected
+}
+
 class MapViewController: UIViewController {
 
 	// MARK: - Properties
 	
 	@IBOutlet weak var mapView: GMSMapView!
 	
+	@IBOutlet weak var pulsingView: UIView!
+	@IBOutlet weak var pulsingViewLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var loadingView: UIView!
+	@IBOutlet weak var loadingViewLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var loadingViewTopConstraint: NSLayoutConstraint!
+	
+	@IBOutlet weak var searchView: UIView!
 	@IBOutlet weak var searchTextField: UITextField!
 	@IBOutlet weak var searchTextFieldTopConstraint: NSLayoutConstraint!
+	@IBOutlet weak var searchTextFieldBottomConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldHeightConstraint: NSLayoutConstraint!
+	
+	@IBOutlet weak var addressLabel: UILabel!
+	@IBOutlet weak var addressLabelBottomConstraint: NSLayoutConstraint!
 	
 	@IBOutlet weak var locationListView: UIView!
 	@IBOutlet weak var locationListViewTopConstraint: NSLayoutConstraint!
@@ -41,13 +64,21 @@ class MapViewController: UIViewController {
 	let parkingMarker3 = GMSMarker()
 	let parkingMarker4 = GMSMarker()
 	
+	let selectedParkingMarker = GMSMarker()
+	
 	private let geocoder = Geocoder.shared
 	
 	private let parkingMarkerView = Bundle.main.loadNibNamed("ParkingMarkerView", owner: nil, options: nil)?.first as! ParkingMarkerView
 	
+	private let selectedParkingMarkerView = Bundle.main.loadNibNamed("SelectedParkingMarkerView", owner: nil, options: nil)?.first as! SelectedParkingMarkerView
+	
 	private var lastLocation: CLLocation?
 	
 	private var currentLocationMarkerShadowLayer: CAShapeLayer!
+	
+	private var pulsingViewAnimation: PulsingViewAnimation! = .notAnimating
+	
+	private var searchStatus: SearchStatus! = .searchClosed
 	
 //	private var locations: [GMSAutocompletePrediction] = []
 	private var locations: [Location] = []
@@ -117,62 +148,81 @@ class MapViewController: UIViewController {
 		parkingMarker4.iconView = parkingMarkerView
 		parkingMarker4.map = mapView
 		parkingMarker4.appearAnimation = GMSMarkerAnimation.pop
+		
+		selectedParkingMarker.iconView = selectedParkingMarkerView
+		selectedParkingMarker.map = mapView
+		selectedParkingMarker.appearAnimation = GMSMarkerAnimation.pop
 	}
 	
 	func placeAutocomplete(searchText: String) {
-//		let visibleRegion = self.mapView.projection.visibleRegion()
-//		let bounds = GMSCoordinateBounds(coordinate: visibleRegion.farLeft, coordinate: visibleRegion.nearRight)
-//
-//		let filter = GMSAutocompleteFilter()
-//		filter.country = Locale.current.regionCode
-//
-//		let placesClient = GMSPlacesClient()
-//		placesClient.autocompleteQuery(searchText, bounds: bounds, filter: filter, callback: {(results, error) -> Void in
-//			if let error = error {
-//				print("Autocomplete error \(error)")
-//				return
-//			}
-//			if let results = results {
-//				self.locations = results
-//				for result in results {
-//					print("Result \(result.attributedFullText) with placeID \(String(describing: result.placeID))")
-//				}
-//
-//				self.locationTableView.reloadData()
-//			}
-//		})
+		loadingViewTopConstraint.constant = -15
+		loadingViewLeadingConstraint.constant = -15
 		
+		UIView.animate(withDuration: 0.4) {
+			self.view.layoutIfNeeded()
+		}
+		
+		let cornerAnimation: CABasicAnimation = CABasicAnimation(keyPath:"cornerRadius")
+		
+		let scaleAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+
+		if pulsingViewAnimation == PulsingViewAnimation.notAnimating {
+			pulsingViewAnimation = PulsingViewAnimation.animating
+		
+			cornerAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+			cornerAnimation.fromValue = pulsingView.layer.cornerRadius
+			cornerAnimation.toValue = 4
+			cornerAnimation.duration = 0.8
+
+			scaleAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+			scaleAnimation.duration = 0.4
+			scaleAnimation.repeatCount = 30.0
+			scaleAnimation.autoreverses = true
+			scaleAnimation.fromValue = 1.0;
+			scaleAnimation.toValue = 0.8;
+			
+			pulsingView.layer.add(cornerAnimation, forKey: "cornerRadius")
+			pulsingView.layer.cornerRadius = 4
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				self.pulsingView.layer.add(scaleAnimation, forKey: "scale")
+				self.pulsingView.layer.removeAnimation(forKey: "cornerRadius")
+			}
+		}
+
 		let options = ForwardGeocodeOptions(query: searchText)
 		
         options.allowedISOCountryCodes = ["BR"]
         options.focalLocation = CLLocation(latitude: lastLocation?.coordinate.latitude ?? 0, longitude: lastLocation?.coordinate.longitude ?? 0)
-        options.allowedScopes = [.address, .pointOfInterest]
+        options.allowedScopes = [.address, .pointOfInterest, .landmark]
 		
         let task = geocoder.geocode(options) { (placemarks, attribution, error) in
             if let placemarks = placemarks {
                 self.locations.removeAll()
 				
                 var location = [
-                    "Title": "",
-                    "Subtitle": "",
-                    "Latitude": 0,
-                    "Longitude": 0
+                    "title": "",
+                    "subtitle": "",
+                    "genre": "",
+                    "isAffiliate": false,
+                    "latitude": 0,
+                    "longitude": 0
                     ] as [String : Any]
 				
                 for placemark in placemarks {
-					print("Place \(placemark)")
-					print("Place addressDictionary \(String(describing: placemark.addressDictionary))")
-					print("Place formattedName \(placemark.formattedName)")
-					print("Place genres \(String(describing: placemark.genres))")
-					print("Place imageName \(String(describing: placemark.imageName))")
-					print("Place phoneNumber \(String(describing: placemark.phoneNumber))")
-					print("Place postalAddress \(String(describing: placemark.postalAddress))")
-					print("Place relevance \(placemark.relevance)")
 					
                     var subtitle = ""
 					
                     if #available(iOS 10.3, *) {
+						if placemark.postalAddress?.street != "" {
+//							subtitle += placemark.name
+						}
+						
                         if placemark.postalAddress?.subLocality != "" {
+                        	if subtitle != "" {
+								subtitle += ", "
+							}
+							
                             subtitle += placemark.postalAddress!.subLocality
                         }
 						
@@ -194,26 +244,59 @@ class MapViewController: UIViewController {
                     }
 					
                     if placemark.postalAddress?.state != "" {
-                        if subtitle != "" {
-                            subtitle += " - "
-                        }
+//                        if subtitle != "" {
+//                            subtitle += " - "
+//                        }
 						
-                        subtitle += placemark.postalAddress!.state
+//                        subtitle += placemark.postalAddress!.state
                     }
 					
-                    location["Title"] = placemark.formattedName
-                    location["Subtitle"] = subtitle
-					location["Genre"] = placemark.genres?[0]
-					location["Latitude"] = placemark.location?.coordinate.latitude
-					location["Longitude"] = placemark.location?.coordinate.longitude
-					location["Location"] = CLLocationCoordinate2D(latitude: placemark.location?.coordinate.latitude ?? 0, longitude: placemark.location?.coordinate.longitude ?? 0)
+                    location["title"] = placemark.formattedName
+                    location["subtitle"] = subtitle
+					location["genre"] = placemark.genres?[0]
+					location["isAffiliate"] = Bool.random()
+					location["latitude"] = placemark.location?.coordinate.latitude
+					location["longitude"] = placemark.location?.coordinate.longitude
+					location["location"] = CLLocationCoordinate2D(latitude: placemark.location?.coordinate.latitude ?? 0, longitude: placemark.location?.coordinate.longitude ?? 0)
 					
                     self.locations.append(Location(location))
                 }
 				
+//				scaleAnimation.duration = 0.8
+//				scaleAnimation.repeatCount = 1
+//				scaleAnimation.autoreverses = true
+//				scaleAnimation.fromValue = self.pulsingView.layer.contentsScale;
+//				scaleAnimation.toValue = 1;
+
+				if self.pulsingViewAnimation == PulsingViewAnimation.animating {
+					self.pulsingViewAnimation = PulsingViewAnimation.notAnimating
+					
+					DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+						cornerAnimation.fromValue = self.pulsingView.layer.cornerRadius
+						cornerAnimation.toValue = 0
+						cornerAnimation.duration = 0.8
+						
+						self.pulsingView.layer.add(scaleAnimation, forKey: "scale")
+						
+						self.loadingViewTopConstraint.constant = -4
+						self.loadingViewLeadingConstraint.constant = -4
+						
+						UIView.animate(withDuration: 0.4) {
+							self.view.layoutIfNeeded()
+						}
+						
+						DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+							self.pulsingView.layer.add(cornerAnimation, forKey: "cornerRadius")
+							self.pulsingView.layer.cornerRadius = 0
+							
+							self.pulsingView.layer.removeAnimation(forKey: "scale")
+//							self.pulsingView.layer.removeAllAnimations()
+						}
+					}
+				}
+				
                 self.locationTableView.reloadData()
             }
-			
         }
 		
         task.resume()
@@ -240,27 +323,17 @@ class MapViewController: UIViewController {
         }
 		
 		if panGesture.state == UIGestureRecognizer.State.began {
-            print(panGesture)
-			
-//            self.locationsViewTopShadow.isHidden = false
+//            print(panGesture)
         }
 		
 		if panGesture.state == UIGestureRecognizer.State.ended {
-            print(panGesture)
-			
-//            self.readyButton.isHidden = false
-			
 			UIView.animate(withDuration: 0.2, delay: 0, animations: {
                 if self.locationListViewTopConstraint.constant >= 200 {
-                    self.locationListViewTopConstraint.constant = 500
+                    self.locationListViewTopConstraint.constant = 550
                     self.locationListViewLeadingConstraint.constant = 10
-					
-//                    self.locationsViewTopShadow.alpha = 0
                 } else {
                     self.locationListViewTopConstraint.constant = 0
                     self.locationListViewLeadingConstraint.constant = 0
-					
-//                    self.locationsViewTopShadow.alpha = 1
                 }
 				
 				self.locationListView.layoutIfNeeded()
@@ -271,15 +344,15 @@ class MapViewController: UIViewController {
 		if panGesture.state == UIGestureRecognizer.State.changed {
             print(panGesture)
 			
-			UIView.animate(withDuration: 0.1, delay: 0, animations: {
-                self.locationListViewTopConstraint.constant += translation.y
-                self.locationListViewLeadingConstraint.constant += translation.y/30
-				
-//                self.locationsViewTopShadow.alpha -= translation.y/100
-				
-				self.locationListView.layoutIfNeeded()
-				self.view.layoutIfNeeded()
-            }, completion: nil)
+			self.locationListViewTopConstraint.constant += translation.y
+			self.locationListViewLeadingConstraint.constant += translation.y/30
+			
+//			UIView.animate(withDuration: 0.01, delay: 0, animations: {
+////                self.locationsViewTopShadow.alpha -= translation.y/100
+//
+//				self.locationListView.layoutIfNeeded()
+//				self.view.layoutIfNeeded()
+//            }, completion: nil)
 			
             self.lastDragged = translation.y
         } else {
@@ -288,6 +361,11 @@ class MapViewController: UIViewController {
     }
 	
     func closeSearch() {
+		searchStatus = .searchClosed
+		
+    	self.searchTextField.isUserInteractionEnabled = true
+		
+    	self.pulsingViewLeadingConstraint.constant = 20
 		self.searchTextFieldTopConstraint.constant = 60
 		self.searchTextFieldLeadingConstraint.constant = 24
 		self.searchTextFieldHeightConstraint.constant = 60
@@ -295,11 +373,14 @@ class MapViewController: UIViewController {
 		self.locationListViewTopConstraint.constant = 750
 		self.locationListViewLeadingConstraint.constant = 0
 		
-		UIView.animate(withDuration: 0.3) {
-			self.view.layoutIfNeeded()
-		}
+		self.searchTextField.resignFirstResponder()
 		
-		searchTextField.resignFirstResponder()
+		UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+			self.searchTextField.transform = CGAffineTransform.identity
+			self.searchView.backgroundColor = .darkGray
+			
+			self.view.layoutIfNeeded()
+		})
     }
 	
 	@IBAction func goToMyLocation(_ sender: UIButton) {
@@ -307,22 +388,30 @@ class MapViewController: UIViewController {
 	}
 	
 	@IBAction func locationSearchOpen(_ sender: Any) {
+		searchStatus = .searchOpen
+		
+		self.pulsingViewLeadingConstraint.constant = 20
 		self.searchTextFieldTopConstraint.constant = -45
 		self.searchTextFieldLeadingConstraint.constant = 0
 		self.searchTextFieldHeightConstraint.constant = 120
 		self.collectionViewBottomConstraint.constant = -250
 		
-		UIView.animate(withDuration: 0.3) {
+		UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+			self.searchView.backgroundColor = .darkGray
+			
 			self.view.layoutIfNeeded()
-		}
+		})
 	}
 	
 	@IBAction func locationSearch(_ sender: UITextField) {
+		searchStatus = .searching
+	
 		self.locationListViewTopConstraint.constant = 0
+		self.locationListViewLeadingConstraint.constant = 0
 		
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
 			self.view.layoutIfNeeded()
-		}
+		})
 		
 		placeAutocomplete(searchText: searchTextField.text ?? "")
 	}
@@ -386,17 +475,19 @@ extension MapViewController: CLLocationManagerDelegate {
 		
 		lastLocation = location
 	}
-	
-	
 }
 
 
-// MARK: - UICollectionViewDelegate
+// MARK: - UITableViewDelegate
 
 extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return locations.count + 1
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 65
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -409,78 +500,29 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 		cell?.affiliateParkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
 		
 		if locations.count > indexPath.row {
-			cell?.locationNameLabel.text = self.locations[indexPath.row].Title
-			cell?.locationAddressLabel.text = self.locations[indexPath.row].Subtitle
+			cell?.locationNameLabel.text = self.locations[indexPath.row].title
+			cell?.locationAddressLabel.text = self.locations[indexPath.row].subtitle
 			
-			if self.locations[indexPath.row].Genre == "parking" {
+			cell?.locationAddressLabel.isHidden = false
+			
+			if self.locations[indexPath.row].genre == "parking" {
 				cell?.locationSymbolImageView.isHidden = true
 				cell?.parkingSymbolView.isHidden = false
 				
 				cell?.locationSymbolImageView.isHidden = true
-
-				let isAffiliate = Bool.random()
 			
-				cell?.parkingSymbolView.isHidden = isAffiliate
-				cell?.affiliateParkingSymbolView.isHidden = !isAffiliate
-				
-//				if Bool.random() {
-//					cell?.locationSymbolImageView.isHidden = true
-//					cell?.parkingSymbolView.isHidden = true
-//					cell?.affiliateParkingSymbolView.isHidden = false
-//
-//					cell?.parkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
-//					cell?.parkingSymbolLabel.textColor = .white
-//				} else {
-//					cell?.locationSymbolImageView.isHidden = true
-//					cell?.parkingSymbolView.isHidden = false
-//					cell?.affiliateParkingSymbolView.isHidden = true
-//
-//					cell?.parkingSymbolView.backgroundColor = .white
-//					cell?.parkingSymbolLabel.textColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1)
-//				}
+				cell?.parkingSymbolView.isHidden = self.locations[indexPath.row].isAffiliate
+				cell?.affiliateParkingSymbolView.isHidden = !self.locations[indexPath.row].isAffiliate
 			} else {
 				cell?.locationSymbolImageView.isHidden = false
 				cell?.parkingSymbolView.isHidden = true
 				cell?.affiliateParkingSymbolView.isHidden = true
 			}
-			
-//			let placesClient = GMSPlacesClient()
-//			placesClient.lookUpPlaceID(locations[indexPath.row].placeID ?? "", callback: { (place, error) -> Void in
-//				if let error = error {
-//					print("lookup place id query error: \(error.localizedDescription)")
-//					return
-//				}
-//
-//				guard let place = place else {
-//					print("No place details for \(String(describing: self.locations[indexPath.row].placeID))")
-//					return
-//				}
-//
-//				cell?.locationNameLabel.text = self.locations[indexPath.row].attributedPrimaryText.string
-//				cell?.locationAddressLabel.text = self.locations[indexPath.row].attributedSecondaryText?.string
-//
-//				print("Place details type \(place.types[0])")
-//
-//				if place.types[0] == "parking" {
-//					cell?.locationSymbolImageView.isHidden = true
-//					cell?.parkingSymbolView.isHidden = false
-//
-//					if Bool.random() {
-//						cell?.parkingSymbolView.setGradientBackground(colorTop: UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1), colorBottom: UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1))
-//						cell?.parkingSymbolLabel.textColor = .white
-//					} else {
-//						cell?.parkingSymbolView.backgroundColor = .white
-//						cell?.parkingSymbolLabel.textColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1)
-//					}
-//				} else {
-//					cell?.locationSymbolImageView.isHidden = false
-//					cell?.parkingSymbolView.isHidden = true
-//				}
-//			})
 		} else {
 			cell?.locationSymbolImageView.isHidden = false
 			cell?.locationNameLabel.text = "Defina o local no mapa"
 			cell?.locationAddressLabel.text = ""
+			cell?.locationAddressLabel.isHidden = true
 		}
 		
 		return cell!
@@ -489,34 +531,42 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		locationTableView.deselectRow(at: indexPath, animated: true)
 		
-		print(locations[indexPath.row])
+		collectionView.reloadData()
 		
-//		let placesClient = GMSPlacesClient()
-//		placesClient.lookUpPlaceID(locations[indexPath.row].placeID ?? "", callback: { (place, error) -> Void in
-//			if let error = error {
-//				print("lookup place id query error: \(error.localizedDescription)")
-//				return
-//			}
-//
-//			guard let place = place else {
-//				print("No place details for \(String(describing: self.locations[indexPath.row].placeID))")
-//				return
-//			}
-//
-//			print("Place \(place)")
-//			print("Place name \(place.name)")
-//			print("Place address \(String(describing: place.formattedAddress))")
-//			print("Place placeID \(place.placeID)")
-//			print("Place coordinates \(place.coordinate)")
-//			print("Place address components \(String(describing: place.addressComponents))")
-//			print("Place open now status \(place.openNowStatus)")
-//			print("Place phone number \(String(describing: place.phoneNumber))")
-//			print("Place price level \(place.priceLevel.rawValue)")
-//			print("Place viewport \(String(describing: place.viewport))")
-//			print("Place viewport \(place.types)")
-//			print("Place attributions \(String(describing: place.attributions))")
-//		})
-//		print(GMSPlacesClient.lookUpPlaceID(locations[indexPath.row].placeID))
+		self.searchTextField.resignFirstResponder()
+		
+		if self.locations[indexPath.row].genre == "parking" {
+			searchStatus = .resultSelected
+		
+			self.searchTextField.text = self.locations[indexPath.row].title
+			self.searchTextField.isUserInteractionEnabled = false
+			
+			self.pulsingViewLeadingConstraint.constant = -10
+			self.searchTextFieldBottomConstraint.constant = 16
+			self.searchTextFieldHeightConstraint.constant = 180
+			self.collectionViewBottomConstraint.constant = 23
+			self.locationListViewTopConstraint.constant = 750
+			self.locationListViewLeadingConstraint.constant = 0
+			
+			let originalTransform = self.searchTextField.transform
+			let scaledTransform = originalTransform.scaledBy(x: 1.2, y: 1.2)
+			let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 40, y: 0)
+			
+			UIView.animate(withDuration: 0.4, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+				self.searchTextField.transform = scaledAndTranslatedTransform
+				
+				if self.locations[indexPath.row].isAffiliate {
+					self.searchView.backgroundColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1)
+				} else {
+					self.searchView.backgroundColor = .white
+				}
+				
+				self.view.layoutIfNeeded()
+			})
+		}
+		
+		selectedParkingMarker.position = locations[indexPath.row].location
+		mapView.animate(to: GMSCameraPosition(target: locations[indexPath.row].location, zoom: 16, bearing: 0, viewingAngle: 0))
 	}
 }
 

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,12 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ParkingMarkerView" customModule="Flanelinha" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="115" height="29"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectedParkingMarkerView" customModule="Flanelinha">
+            <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWd-kL-j9W">
-                    <rect key="frame" x="0.0" y="0.0" width="115" height="29"/>
+                    <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1J-dR-74G">
                             <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
@@ -38,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Q1J-dR-74G" firstAttribute="leading" secondItem="YWd-kL-j9W" secondAttribute="leading" id="Fi5-90-oEq"/>
                         <constraint firstItem="Q1J-dR-74G" firstAttribute="top" secondItem="YWd-kL-j9W" secondAttribute="top" id="eH7-8a-1id"/>
@@ -52,29 +51,19 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 13,00/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-3G-WYF">
-                    <rect key="frame" x="36" y="6.5" width="72" height="16"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Es1-3G-WYF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="E6j-Il-1u8"/>
                 <constraint firstItem="YWd-kL-j9W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NAD-VK-kPH"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Es1-3G-WYF" secondAttribute="trailing" constant="7" id="Ood-pg-Mhb"/>
                 <constraint firstItem="YWd-kL-j9W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R8m-0b-aAd"/>
-                <constraint firstItem="Es1-3G-WYF" firstAttribute="leading" secondItem="Q1J-dR-74G" secondAttribute="trailing" constant="7" id="Sde-D5-MvV"/>
                 <constraint firstItem="YWd-kL-j9W" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="c0R-tH-gcK"/>
                 <constraint firstItem="YWd-kL-j9W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ipo-yC-Hl8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="parkingSignLabel" destination="8UQ-BI-Z3B" id="i7L-Kc-Gab"/>
-                <outlet property="parkingSignView" destination="Q1J-dR-74G" id="dfE-Yi-ZqW"/>
-                <outlet property="priceLabel" destination="Es1-3G-WYF" id="ROL-3Q-14O"/>
+                <outlet property="parkingSignLabel" destination="8UQ-BI-Z3B" id="ROs-mE-TIy"/>
+                <outlet property="parkingSignView" destination="Q1J-dR-74G" id="VKO-FI-h7U"/>
             </connections>
             <point key="canvasLocation" x="52" y="48.125937031484263"/>
         </view>

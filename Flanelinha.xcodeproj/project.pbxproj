@@ -14,6 +14,8 @@
 		417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */; };
 		417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453BA21A883B400918180 /* ParkingMarkerView.swift */; };
 		419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */; };
+		41A4EFB921B1A97C00862F7A /* SelectedParkingMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A4EFB821B1A97C00862F7A /* SelectedParkingMarkerView.swift */; };
+		41A4EFBA21B1AB6400862F7A /* SelectedParkingMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4EFB721B1A93F00862F7A /* SelectedParkingMarkerView.xib */; };
 		41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CA921A31E9300A32DCC /* AppDelegate.swift */; };
 		41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CAB21A31E9300A32DCC /* MapViewController.swift */; };
 		41AC3CAF21A31E9300A32DCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CAD21A31E9300A32DCC /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMarkerView.swift; sourceTree = "<group>"; };
 		417453BA21A883B400918180 /* ParkingMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMarkerView.swift; sourceTree = "<group>"; };
 		419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		41A4EFB721B1A93F00862F7A /* SelectedParkingMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedParkingMarkerView.xib; sourceTree = "<group>"; };
+		41A4EFB821B1A97C00862F7A /* SelectedParkingMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedParkingMarkerView.swift; sourceTree = "<group>"; };
 		41AC3CA621A31E9300A32DCC /* Flanelinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flanelinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AC3CA921A31E9300A32DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AC3CAB21A31E9300A32DCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */,
 				417453BA21A883B400918180 /* ParkingMarkerView.swift */,
 				417453B621A84EDF00918180 /* ParkingMarkerView.xib */,
+				41A4EFB821B1A97C00862F7A /* SelectedParkingMarkerView.swift */,
+				41A4EFB721B1A93F00862F7A /* SelectedParkingMarkerView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			files = (
 				41AC3CB721A31E9600A32DCC /* LaunchScreen.storyboard in Resources */,
 				417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */,
+				41A4EFBA21B1AB6400862F7A /* SelectedParkingMarkerView.xib in Resources */,
 				41AC3CB421A31E9600A32DCC /* Assets.xcassets in Resources */,
 				41AC3CAF21A31E9300A32DCC /* Main.storyboard in Resources */,
 				41AC3CE321A36E5600A32DCC /* dark.json in Resources */,
@@ -575,6 +582,7 @@
 				41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */,
 				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
 				41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */,
+				41A4EFB921B1A97C00862F7A /* SelectedParkingMarkerView.swift in Sources */,
 				417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
