@@ -29,6 +29,9 @@ class MapViewController: UIViewController {
 	
 	@IBOutlet weak var mapView: GMSMapView!
 	
+	@IBOutlet weak var backButton: UIButton!
+	@IBOutlet weak var backButtonLeadingConstraint: NSLayoutConstraint!
+	
 	@IBOutlet weak var pulsingView: UIView!
 	@IBOutlet weak var pulsingViewLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var loadingView: UIView!
@@ -41,6 +44,9 @@ class MapViewController: UIViewController {
 	@IBOutlet weak var searchTextFieldBottomConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var searchTextFieldHeightConstraint: NSLayoutConstraint!
+	
+	@IBOutlet weak var locationTypeLabel: UILabel!
+	@IBOutlet weak var locationTypeLabelTopConstraint: NSLayoutConstraint!
 	
 	@IBOutlet weak var addressLabel: UILabel!
 	@IBOutlet weak var addressLabelBottomConstraint: NSLayoutConstraint!
@@ -101,6 +107,11 @@ class MapViewController: UIViewController {
 		
 		locationManager.delegate = self
 		locationManager.requestWhenInUseAuthorization()
+		
+		let backIconImage = UIImage(named: "back_icon")
+		let tintedImage = backIconImage?.withRenderingMode(.alwaysTemplate)
+		backButton.setImage(tintedImage, for: .normal)
+		backButton.tintColor = .white
 		
 		configureMapStyle()
 		createPanGestureRecognizer(targetView: locationListView)
@@ -215,7 +226,7 @@ class MapViewController: UIViewController {
 					
                     if #available(iOS 10.3, *) {
 						if placemark.postalAddress?.street != "" {
-//							subtitle += placemark.name
+							subtitle += placemark.postalAddress?.street ?? ""
 						}
 						
                         if placemark.postalAddress?.subLocality != "" {
@@ -365,10 +376,14 @@ class MapViewController: UIViewController {
 		
     	self.searchTextField.isUserInteractionEnabled = true
 		
+		self.backButtonLeadingConstraint.constant = -30
     	self.pulsingViewLeadingConstraint.constant = 20
 		self.searchTextFieldTopConstraint.constant = 60
+		self.searchTextFieldBottomConstraint.constant = 8
 		self.searchTextFieldLeadingConstraint.constant = 24
 		self.searchTextFieldHeightConstraint.constant = 60
+		self.locationTypeLabelTopConstraint.constant = 0
+		self.addressLabelBottomConstraint.constant = 0
 		self.collectionViewBottomConstraint.constant = 23
 		self.locationListViewTopConstraint.constant = 750
 		self.locationListViewLeadingConstraint.constant = 0
@@ -378,6 +393,9 @@ class MapViewController: UIViewController {
 		UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
 			self.searchTextField.transform = CGAffineTransform.identity
 			self.searchView.backgroundColor = .darkGray
+			
+			self.locationTypeLabel.alpha = 0
+			self.addressLabel.alpha = 0
 			
 			self.view.layoutIfNeeded()
 		})
@@ -390,6 +408,7 @@ class MapViewController: UIViewController {
 	@IBAction func locationSearchOpen(_ sender: Any) {
 		searchStatus = .searchOpen
 		
+		self.backButtonLeadingConstraint.constant = -30
 		self.pulsingViewLeadingConstraint.constant = 20
 		self.searchTextFieldTopConstraint.constant = -45
 		self.searchTextFieldLeadingConstraint.constant = 0
@@ -416,6 +435,9 @@ class MapViewController: UIViewController {
 		placeAutocomplete(searchText: searchTextField.text ?? "")
 	}
 	
+	@IBAction func goBack(_ sender: Any) {
+		closeSearch()
+	}
 	
 }
 
@@ -541,17 +563,21 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 			self.searchTextField.text = self.locations[indexPath.row].title
 			self.searchTextField.isUserInteractionEnabled = false
 			
+			self.locationTypeLabel.text = "Estacionamento"
+			self.addressLabel.text = self.locations[indexPath.row].subtitle
+			
+			self.backButtonLeadingConstraint.constant = 16
 			self.pulsingViewLeadingConstraint.constant = -10
-			self.searchTextFieldBottomConstraint.constant = 16
-			self.searchTextFieldHeightConstraint.constant = 180
+			self.searchTextFieldBottomConstraint.constant = 26
+			self.searchTextFieldHeightConstraint.constant = 200
 			self.collectionViewBottomConstraint.constant = 23
 			self.locationListViewTopConstraint.constant = 750
 			self.locationListViewLeadingConstraint.constant = 0
 			
 			let originalTransform = self.searchTextField.transform
-			let scaledTransform = originalTransform.scaledBy(x: 1.2, y: 1.2)
-			let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 40, y: 0)
-			
+			let scaledTransform = originalTransform.scaledBy(x: 1.3, y: 1.3)
+			let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 45, y: 0)
+	
 			UIView.animate(withDuration: 0.4, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
 				self.searchTextField.transform = scaledAndTranslatedTransform
 				
@@ -562,6 +588,16 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 				}
 				
 				self.view.layoutIfNeeded()
+			}, completion: { (Bool) in
+				self.locationTypeLabelTopConstraint.constant = -12
+				self.addressLabelBottomConstraint.constant = 14
+				
+				UIView.animate(withDuration: 0.4, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+					self.locationTypeLabel.alpha = 1
+					self.addressLabel.alpha = 1
+					
+					self.view.layoutIfNeeded()
+				})
 			})
 		}
 		

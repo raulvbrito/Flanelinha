@@ -10,6 +10,7 @@
 		34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */; };
 		413A796321AEFF22001D79DD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A796221AEFF22001D79DD /* Location.swift */; };
 		4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */; };
+		416AFED021B8326200F9E8B6 /* ParkingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AFECF21B8326200F9E8B6 /* ParkingCollectionViewCell.swift */; };
 		417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 417453B621A84EDF00918180 /* ParkingMarkerView.xib */; };
 		417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */; };
 		417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453BA21A883B400918180 /* ParkingMarkerView.swift */; };
@@ -51,6 +52,7 @@
 		2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		413A796221AEFF22001D79DD /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		416AFECF21B8326200F9E8B6 /* ParkingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingCollectionViewCell.swift; sourceTree = "<group>"; };
 		417453B621A84EDF00918180 /* ParkingMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkingMarkerView.xib; sourceTree = "<group>"; };
 		417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMarkerView.swift; sourceTree = "<group>"; };
 		417453BA21A883B400918180 /* ParkingMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMarkerView.swift; sourceTree = "<group>"; };
@@ -143,8 +145,9 @@
 		419FF3E621A5E22D00977C34 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */,
 				4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */,
+				419FF3E721A5E26200977C34 /* OptionCollectionViewCell.swift */,
+				416AFECF21B8326200F9E8B6 /* ParkingCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				413A796321AEFF22001D79DD /* Location.swift in Sources */,
 				417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */,
 				41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */,
+				416AFED021B8326200F9E8B6 /* ParkingCollectionViewCell.swift in Sources */,
 				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
 				41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */,
 				41A4EFB921B1A97C00862F7A /* SelectedParkingMarkerView.swift in Sources */,
