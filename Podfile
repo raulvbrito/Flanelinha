@@ -6,8 +6,13 @@ target 'Flanelinha' do
   use_frameworks!
 
   # Pods for Flanelinha
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'MapboxDirections.swift'
   pod 'MapboxGeocoder.swift'
   pod 'Tailor'
 

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */; };
+		103C6E3D65AC93A6FE7962EE /* Pods_Flanelinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D10AF630C6FF355193415 /* Pods_Flanelinha.framework */; };
 		413A796321AEFF22001D79DD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A796221AEFF22001D79DD /* Location.swift */; };
 		4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */; };
+		4165FEB021C3134500490228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4165FEAF21C3134500490228 /* GoogleService-Info.plist */; };
 		416AFED021B8326200F9E8B6 /* ParkingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AFECF21B8326200F9E8B6 /* ParkingCollectionViewCell.swift */; };
+		416AFF1D21B9723C00F9E8B6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AFF1C21B9723C00F9E8B6 /* Player.swift */; };
+		416AFF1F21B9B3EC00F9E8B6 /* PlayerMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416AFF1E21B9B3EC00F9E8B6 /* PlayerMarkerView.xib */; };
+		416AFF2121B9B40C00F9E8B6 /* PlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AFF2021B9B40C00F9E8B6 /* PlayerMarkerView.swift */; };
 		417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 417453B621A84EDF00918180 /* ParkingMarkerView.xib */; };
 		417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */; };
 		417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417453BA21A883B400918180 /* ParkingMarkerView.swift */; };
@@ -26,8 +30,8 @@
 		41AC3CC221A31E9600A32DCC /* FlanelinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CC121A31E9600A32DCC /* FlanelinhaTests.swift */; };
 		41AC3CCD21A31E9600A32DCC /* FlanelinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */; };
 		41AC3CE321A36E5600A32DCC /* dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CE221A36DD200A32DCC /* dark.json */; };
-		4888784F6C14CE9DF55AE361 /* Pods_FlanelinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */; };
-		BB51E59F7E7A522936142C05 /* Pods_FlanelinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */; };
+		6DEFC857D10F5CD5E9006EC3 /* Pods_FlanelinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C330FE10952517B099AADFDB /* Pods_FlanelinhaTests.framework */; };
+		FC0DA3684E3BDDF30CD6A544 /* Pods_FlanelinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99F94A17677D1580C817F09 /* Pods_FlanelinhaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2D10AF630C6FF355193415 /* Pods_Flanelinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flanelinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		413A796221AEFF22001D79DD /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4165DEB521AC80F800C74F2E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		4165FEAF21C3134500490228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		416AFECF21B8326200F9E8B6 /* ParkingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingCollectionViewCell.swift; sourceTree = "<group>"; };
+		416AFF1C21B9723C00F9E8B6 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		416AFF1E21B9B3EC00F9E8B6 /* PlayerMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerMarkerView.xib; sourceTree = "<group>"; };
+		416AFF2021B9B40C00F9E8B6 /* PlayerMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMarkerView.swift; sourceTree = "<group>"; };
 		417453B621A84EDF00918180 /* ParkingMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkingMarkerView.xib; sourceTree = "<group>"; };
 		417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMarkerView.swift; sourceTree = "<group>"; };
 		417453BA21A883B400918180 /* ParkingMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMarkerView.swift; sourceTree = "<group>"; };
@@ -74,13 +81,14 @@
 		41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlanelinhaUITests.swift; sourceTree = "<group>"; };
 		41AC3CCE21A31E9600A32DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AC3CE221A36DD200A32DCC /* dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dark.json; sourceTree = "<group>"; };
-		44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flanelinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.release.xcconfig"; sourceTree = "<group>"; };
-		8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.release.xcconfig"; sourceTree = "<group>"; };
-		F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.debug.xcconfig"; sourceTree = "<group>"; };
+		525DE51CA4A592D4C6912BBB /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CD165B221721F1C8A824748 /* Pods-FlanelinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF2E9D15651F0D86B54171D7 /* Pods-Flanelinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.debug.xcconfig"; sourceTree = "<group>"; };
+		C330FE10952517B099AADFDB /* Pods_FlanelinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F42054B8B0BA09B666F573 /* Pods-FlanelinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D334531E1486521C0BABF253 /* Pods-FlanelinhaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D6E420A168A2B7C183C9EA1E /* Pods-Flanelinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.release.xcconfig"; sourceTree = "<group>"; };
+		D99F94A17677D1580C817F09 /* Pods_FlanelinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlanelinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34B69AEC696ECDEEE98B235A /* Pods_Flanelinha.framework in Frameworks */,
+				103C6E3D65AC93A6FE7962EE /* Pods_Flanelinha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB51E59F7E7A522936142C05 /* Pods_FlanelinhaTests.framework in Frameworks */,
+				6DEFC857D10F5CD5E9006EC3 /* Pods_FlanelinhaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,27 +112,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4888784F6C14CE9DF55AE361 /* Pods_FlanelinhaUITests.framework in Frameworks */,
+				FC0DA3684E3BDDF30CD6A544 /* Pods_FlanelinhaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05DCE6B7C6EC027433D3321A /* Frameworks */ = {
+		3A142F1059E4086350981FF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				44536276DE6141AF3B76E9F5 /* Pods_Flanelinha.framework */,
-				8D850A9573804B59CB38C3FB /* Pods_FlanelinhaTests.framework */,
-				2BAB6726095BAF99600ADC8C /* Pods_FlanelinhaUITests.framework */,
+				AF2E9D15651F0D86B54171D7 /* Pods-Flanelinha.debug.xcconfig */,
+				D6E420A168A2B7C183C9EA1E /* Pods-Flanelinha.release.xcconfig */,
+				D2F42054B8B0BA09B666F573 /* Pods-FlanelinhaTests.debug.xcconfig */,
+				6CD165B221721F1C8A824748 /* Pods-FlanelinhaTests.release.xcconfig */,
+				525DE51CA4A592D4C6912BBB /* Pods-FlanelinhaUITests.debug.xcconfig */,
+				D334531E1486521C0BABF253 /* Pods-FlanelinhaUITests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		413A796121AEFF0D001D79DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				413A796221AEFF22001D79DD /* Location.swift */,
+				416AFF1C21B9723C00F9E8B6 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +148,8 @@
 				417453B821A85E9100918180 /* CurrentLocationMarkerView.swift */,
 				417453BA21A883B400918180 /* ParkingMarkerView.swift */,
 				417453B621A84EDF00918180 /* ParkingMarkerView.xib */,
+				416AFF2021B9B40C00F9E8B6 /* PlayerMarkerView.swift */,
+				416AFF1E21B9B3EC00F9E8B6 /* PlayerMarkerView.xib */,
 				41A4EFB821B1A97C00862F7A /* SelectedParkingMarkerView.swift */,
 				41A4EFB721B1A93F00862F7A /* SelectedParkingMarkerView.xib */,
 			);
@@ -159,8 +173,8 @@
 				41AC3CC021A31E9600A32DCC /* FlanelinhaTests */,
 				41AC3CCB21A31E9600A32DCC /* FlanelinhaUITests */,
 				41AC3CA721A31E9300A32DCC /* Products */,
-				DAACF46F0FB91F9B56F98290 /* Pods */,
-				05DCE6B7C6EC027433D3321A /* Frameworks */,
+				3A142F1059E4086350981FF2 /* Pods */,
+				B1C922C13490B413EAD0482F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +193,7 @@
 			children = (
 				41AC3CB321A31E9600A32DCC /* Assets.xcassets */,
 				41AC3CE221A36DD200A32DCC /* dark.json */,
+				4165FEAF21C3134500490228 /* GoogleService-Info.plist */,
 				41AC3CB821A31E9600A32DCC /* Info.plist */,
 				41AC3CDB21A326F100A32DCC /* Resources */,
 				41AC3CDC21A326FC00A32DCC /* Sources */,
@@ -265,17 +280,14 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
-		DAACF46F0FB91F9B56F98290 /* Pods */ = {
+		B1C922C13490B413EAD0482F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */,
-				54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */,
-				A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */,
-				B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */,
-				151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */,
-				A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */,
+				0C2D10AF630C6FF355193415 /* Pods_Flanelinha.framework */,
+				C330FE10952517B099AADFDB /* Pods_FlanelinhaTests.framework */,
+				D99F94A17677D1580C817F09 /* Pods_FlanelinhaUITests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41AC3CD121A31E9600A32DCC /* Build configuration list for PBXNativeTarget "Flanelinha" */;
 			buildPhases = (
-				D4FCCDFC994B5939C579B2AC /* [CP] Check Pods Manifest.lock */,
+				E878FBEA03C84E832CC55038 /* [CP] Check Pods Manifest.lock */,
 				41AC3CA221A31E9300A32DCC /* Sources */,
 				41AC3CA321A31E9300A32DCC /* Frameworks */,
 				41AC3CA421A31E9300A32DCC /* Resources */,
-				519486DDE569F1007F9E31D2 /* [CP] Embed Pods Frameworks */,
-				1A089D36B85B76819F194AC9 /* [CP] Copy Pods Resources */,
+				525725422F906A3DF893C1F4 /* [CP] Embed Pods Frameworks */,
+				F3D3A451ED4E2BE925AC97D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,12 +317,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41AC3CD421A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaTests" */;
 			buildPhases = (
-				0021BA99F2E4ECF646DFB232 /* [CP] Check Pods Manifest.lock */,
+				007F33D9F259E581CC42CA9B /* [CP] Check Pods Manifest.lock */,
 				41AC3CB921A31E9600A32DCC /* Sources */,
 				41AC3CBA21A31E9600A32DCC /* Frameworks */,
 				41AC3CBB21A31E9600A32DCC /* Resources */,
-				0B6C68AFF9AA480A2B3AF648 /* [CP] Embed Pods Frameworks */,
-				88CA15AF17F761277ECA2411 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,12 +336,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41AC3CD721A31E9700A32DCC /* Build configuration list for PBXNativeTarget "FlanelinhaUITests" */;
 			buildPhases = (
-				84EFD8EA722097BCD58BE764 /* [CP] Check Pods Manifest.lock */,
+				4066A89EEB2978A9A00E7FDF /* [CP] Check Pods Manifest.lock */,
 				41AC3CC421A31E9600A32DCC /* Sources */,
 				41AC3CC521A31E9600A32DCC /* Frameworks */,
 				41AC3CC621A31E9600A32DCC /* Resources */,
-				324034D8ABFE69FB7DBFA37F /* [CP] Embed Pods Frameworks */,
-				9A9FA158E3069798BE8EC0DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -395,8 +403,10 @@
 				417453B721A84EDF00918180 /* ParkingMarkerView.xib in Resources */,
 				41A4EFBA21B1AB6400862F7A /* SelectedParkingMarkerView.xib in Resources */,
 				41AC3CB421A31E9600A32DCC /* Assets.xcassets in Resources */,
+				4165FEB021C3134500490228 /* GoogleService-Info.plist in Resources */,
 				41AC3CAF21A31E9300A32DCC /* Main.storyboard in Resources */,
 				41AC3CE321A36E5600A32DCC /* dark.json in Resources */,
+				416AFF1F21B9B3EC00F9E8B6 /* PlayerMarkerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,16 +427,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0021BA99F2E4ECF646DFB232 /* [CP] Check Pods Manifest.lock */ = {
+		007F33D9F259E581CC42CA9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FlanelinhaTests-checkManifestLockResult.txt",
 			);
@@ -435,25 +449,92 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0B6C68AFF9AA480A2B3AF648 /* [CP] Embed Pods Frameworks */ = {
+		4066A89EEB2978A9A00E7FDF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlanelinhaUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1A089D36B85B76819F194AC9 /* [CP] Copy Pods Resources */ = {
+		525725422F906A3DF893C1F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxGeocoder.swift/MapboxGeocoder.framework",
+				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+				"${BUILT_PRODUCTS_DIR}/Tailor/Tailor.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxGeocoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tailor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E878FBEA03C84E832CC55038 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flanelinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3D3A451ED4E2BE925AC97D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-resources.sh",
@@ -461,6 +542,8 @@
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
@@ -470,107 +553,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		324034D8ABFE69FB7DBFA37F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		519486DDE569F1007F9E31D2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MapboxGeocoder.swift/MapboxGeocoder.framework",
-				"${BUILT_PRODUCTS_DIR}/Tailor/Tailor.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxGeocoder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tailor.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84EFD8EA722097BCD58BE764 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FlanelinhaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88CA15AF17F761277ECA2411 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A9FA158E3069798BE8EC0DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4FCCDFC994B5939C579B2AC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Flanelinha-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -578,12 +560,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416AFF1D21B9723C00F9E8B6 /* Player.swift in Sources */,
 				41AC3CB221A31E9300A32DCC /* Flanelinha.xcdatamodeld in Sources */,
 				4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */,
 				413A796321AEFF22001D79DD /* Location.swift in Sources */,
 				417453B921A85E9100918180 /* CurrentLocationMarkerView.swift in Sources */,
 				41AC3CAC21A31E9300A32DCC /* MapViewController.swift in Sources */,
 				416AFED021B8326200F9E8B6 /* ParkingCollectionViewCell.swift in Sources */,
+				416AFF2121B9B40C00F9E8B6 /* PlayerMarkerView.swift in Sources */,
 				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
 				41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */,
 				41A4EFB921B1A97C00862F7A /* SelectedParkingMarkerView.swift in Sources */,
@@ -760,11 +744,11 @@
 		};
 		41AC3CD221A31E9600A32DCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F59439E94896230F6B3BEC27 /* Pods-Flanelinha.debug.xcconfig */;
+			baseConfigurationReference = AF2E9D15651F0D86B54171D7 /* Pods-Flanelinha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				DEVELOPMENT_TEAM = LFG72U4M9F;
 				INFOPLIST_FILE = Flanelinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -779,11 +763,11 @@
 		};
 		41AC3CD321A31E9600A32DCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54B9D86DC2CB300C83291F45 /* Pods-Flanelinha.release.xcconfig */;
+			baseConfigurationReference = D6E420A168A2B7C183C9EA1E /* Pods-Flanelinha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QDFB98CYU;
+				DEVELOPMENT_TEAM = LFG72U4M9F;
 				INFOPLIST_FILE = Flanelinha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -798,7 +782,7 @@
 		};
 		41AC3CD521A31E9700A32DCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A81D6FC724D3726B9A5644A3 /* Pods-FlanelinhaTests.debug.xcconfig */;
+			baseConfigurationReference = D2F42054B8B0BA09B666F573 /* Pods-FlanelinhaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -820,7 +804,7 @@
 		};
 		41AC3CD621A31E9700A32DCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0BDAF35C2B1346E6C80CC28 /* Pods-FlanelinhaTests.release.xcconfig */;
+			baseConfigurationReference = 6CD165B221721F1C8A824748 /* Pods-FlanelinhaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -842,7 +826,7 @@
 		};
 		41AC3CD821A31E9700A32DCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 151BF143A6FE8220A72AD464 /* Pods-FlanelinhaUITests.debug.xcconfig */;
+			baseConfigurationReference = 525DE51CA4A592D4C6912BBB /* Pods-FlanelinhaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -863,7 +847,7 @@
 		};
 		41AC3CD921A31E9700A32DCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A271E9CA7BB215E881AB9306 /* Pods-FlanelinhaUITests.release.xcconfig */;
+			baseConfigurationReference = D334531E1486521C0BABF253 /* Pods-FlanelinhaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

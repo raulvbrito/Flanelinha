@@ -10,28 +10,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flanelinha/Sources/View Controllers/MapViewController.swift"
-            timestampString = "565716612.5813431"
+            timestampString = "566450648.1732841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "642"
-            endingLineNumber = "642"
-            landmarkName = "scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)"
+            startingLineNumber = "795"
+            endingLineNumber = "795"
+            landmarkName = "observePlayers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flanelinha/Sources/View Controllers/MapViewController.swift"
-            timestampString = "565716612.582304"
+            timestampString = "566450648.173807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "647"
-            endingLineNumber = "647"
-            landmarkName = "scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
+            landmarkName = "addPlayerMarkers(id:playerData:eventType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flanelinha/Sources/View Controllers/MapViewController.swift"
+            timestampString = "566450648.174191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "755"
+            endingLineNumber = "755"
+            landmarkName = "addPlayerMarkers(id:playerData:eventType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
