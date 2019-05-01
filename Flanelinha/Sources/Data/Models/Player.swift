@@ -14,6 +14,8 @@ struct Player: Mappable {
 	
     var id: Int!
     var name: String!
+    var lastName: String!
+    var initials: String!
     var icon: String!
     var clickCount: Int!
 //    var latlong: [String:Any]!
@@ -29,6 +31,8 @@ struct Player: Mappable {
     init(_ map: [String : Any]) {
         id <- map.property("id")
         name <- map.property("name")
+        lastName <- map.property("lastName")
+        initials <- map.property("initials")
         icon <- map.property("icon")
         clickCount <- map.property("clickCount")
 //        location <- map.property("location")

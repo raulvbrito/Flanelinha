@@ -12,6 +12,7 @@ import GoogleMaps
 import GooglePlaces
 import MapboxDirections
 import MapboxGeocoder
+import SCLAlertView
 
 enum PulsingViewAnimation: String {
 	case animating
@@ -28,6 +29,8 @@ enum SearchStatus: String {
 class MapViewController: UIViewController {
 
 	// MARK: - Properties
+	
+	@IBOutlet weak var profileButton: UIButton!
 	
 	@IBOutlet weak var mapView: GMSMapView!
 	
@@ -92,348 +95,7 @@ class MapViewController: UIViewController {
 	
 	private var playerMarkers = [GMSMarker()]
 	
-	private var playersCoordinates: [[CLLocationCoordinate2D]] = [
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57306, longitude: -46.66266),
-	 CLLocationCoordinate2D(latitude: -23.57259, longitude: -46.66212),
-	 CLLocationCoordinate2D(latitude: -23.572490000000002, longitude: -46.662220000000005),
-	 CLLocationCoordinate2D(latitude: -23.572350000000004, longitude: -46.66212),
-	 CLLocationCoordinate2D(latitude: -23.563750000000002, longitude: -46.65382),
-	 CLLocationCoordinate2D(latitude: -23.56406, longitude: -46.65345000000001),
-	 CLLocationCoordinate2D(latitude: -23.563930000000003, longitude: -46.65332000000001),
-	 CLLocationCoordinate2D(latitude: -23.56388, longitude: -46.653380000000006),
-	 CLLocationCoordinate2D(latitude: -23.56387, longitude: -46.653040000000004),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57521, longitude: -46.657),
-	 CLLocationCoordinate2D(latitude: -23.57463, longitude: -46.656369999999995),
-	 CLLocationCoordinate2D(latitude: -23.57322, longitude: -46.657889999999995),
-	 CLLocationCoordinate2D(latitude: -23.572309999999998, longitude: -46.65698999999999),
-	 CLLocationCoordinate2D(latitude: -23.57106, longitude: -46.65825999999999),
-	 CLLocationCoordinate2D(latitude: -23.564989999999998, longitude: -46.65233999999999),
-	 CLLocationCoordinate2D(latitude: -23.56458, longitude: -46.65281999999999),
-	 CLLocationCoordinate2D(latitude: -23.56445, longitude: -46.65268999999999),
-	 CLLocationCoordinate2D(latitude: -23.56429, longitude: -46.65285999999999),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56716, longitude: -46.66831),
-	 CLLocationCoordinate2D(latitude: -23.567410000000002, longitude: -46.668),
-	 CLLocationCoordinate2D(latitude: -23.562990000000003, longitude: -46.6624),
-	 CLLocationCoordinate2D(latitude: -23.562680000000004, longitude: -46.65891),
-	 CLLocationCoordinate2D(latitude: -23.56199, longitude: -46.65781),
-	 CLLocationCoordinate2D(latitude: -23.56222, longitude: -46.657219999999995),
-	 CLLocationCoordinate2D(latitude: -23.56207, longitude: -46.656729999999996),
-	 CLLocationCoordinate2D(latitude: -23.56194, longitude: -46.656),
-	 CLLocationCoordinate2D(latitude: -23.562669999999997, longitude: -46.65484),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56206, longitude: -46.66969),
-	 CLLocationCoordinate2D(latitude: -23.56024, longitude: -46.667770000000004),
-	 CLLocationCoordinate2D(latitude: -23.56253, longitude: -46.66292),
-	 CLLocationCoordinate2D(latitude: -23.56347, longitude: -46.66158),
-	 CLLocationCoordinate2D(latitude: -23.56268, longitude: -46.65891),
-	 CLLocationCoordinate2D(latitude: -23.562649999999998, longitude: -46.65861),
-	 CLLocationCoordinate2D(latitude: -23.561989999999998, longitude: -46.65781),
-	 CLLocationCoordinate2D(latitude: -23.562069999999995, longitude: -46.656729999999996),
-	 CLLocationCoordinate2D(latitude: -23.562729999999995, longitude: -46.6549),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56308, longitude: -46.66223),
-	 CLLocationCoordinate2D(latitude: -23.56347, longitude: -46.66158),
-	 CLLocationCoordinate2D(latitude: -23.56268, longitude: -46.65891),
-	 CLLocationCoordinate2D(latitude: -23.561989999999998, longitude: -46.65781),
-	 CLLocationCoordinate2D(latitude: -23.562219999999996, longitude: -46.656929999999996),
-	 CLLocationCoordinate2D(latitude: -23.562219999999996, longitude: -46.65636),
-	 CLLocationCoordinate2D(latitude: -23.562729999999995, longitude: -46.6549),
-	 CLLocationCoordinate2D(latitude: -23.563879999999994, longitude: -46.65338),
-	 CLLocationCoordinate2D(latitude: -23.563989999999993, longitude: -46.65291),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57351, longitude: -46.64867),
-	 CLLocationCoordinate2D(latitude: -23.5734, longitude: -46.64837),
-	 CLLocationCoordinate2D(latitude: -23.57132, longitude: -46.65106),
-	 CLLocationCoordinate2D(latitude: -23.56924, longitude: -46.64929),
-	 CLLocationCoordinate2D(latitude: -23.56794, longitude: -46.64897),
-	 CLLocationCoordinate2D(latitude: -23.56777, longitude: -46.64881),
-	 CLLocationCoordinate2D(latitude: -23.564519999999998, longitude: -46.65276),
-	 CLLocationCoordinate2D(latitude: -23.564449999999997, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564289999999996, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57445, longitude: -46.64647),
-	 CLLocationCoordinate2D(latitude: -23.572889999999997, longitude: -46.64722),
-	 CLLocationCoordinate2D(latitude: -23.5705, longitude: -46.65036),
-	 CLLocationCoordinate2D(latitude: -23.56924, longitude: -46.64929),
-	 CLLocationCoordinate2D(latitude: -23.56794, longitude: -46.64897),
-	 CLLocationCoordinate2D(latitude: -23.56777, longitude: -46.64881),
-	 CLLocationCoordinate2D(latitude: -23.564519999999998, longitude: -46.65276),
-	 CLLocationCoordinate2D(latitude: -23.564449999999997, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564289999999996, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56162, longitude: -46.64163),
-	 CLLocationCoordinate2D(latitude: -23.562330000000003, longitude: -46.64184),
-	 CLLocationCoordinate2D(latitude: -23.561680000000003, longitude: -46.64443),
-	 CLLocationCoordinate2D(latitude: -23.56548, longitude: -46.647619999999996),
-	 CLLocationCoordinate2D(latitude: -23.56512, longitude: -46.648059999999994),
-	 CLLocationCoordinate2D(latitude: -23.5653, longitude: -46.64872999999999),
-	 CLLocationCoordinate2D(latitude: -23.565170000000002, longitude: -46.64983999999999),
-	 CLLocationCoordinate2D(latitude: -23.566070000000003, longitude: -46.65073999999999),
-	 CLLocationCoordinate2D(latitude: -23.564340000000005, longitude: -46.652829999999994),
-	 CLLocationCoordinate2D(latitude: -23.564110000000007, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.55945, longitude: -46.64422),
-	 CLLocationCoordinate2D(latitude: -23.56122, longitude: -46.644029999999994),
-	 CLLocationCoordinate2D(latitude: -23.565479999999997, longitude: -46.647619999999996),
-	 CLLocationCoordinate2D(latitude: -23.565119999999997, longitude: -46.648059999999994),
-	 CLLocationCoordinate2D(latitude: -23.565299999999997, longitude: -46.64872999999999),
-	 CLLocationCoordinate2D(latitude: -23.56573, longitude: -46.64916999999999),
-	 CLLocationCoordinate2D(latitude: -23.56517, longitude: -46.64983999999999),
-	 CLLocationCoordinate2D(latitude: -23.56607, longitude: -46.65073999999999),
-	 CLLocationCoordinate2D(latitude: -23.56434, longitude: -46.652829999999994),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56795, longitude: -46.64218),
-	 CLLocationCoordinate2D(latitude: -23.56852, longitude: -46.64217),
-	 CLLocationCoordinate2D(latitude: -23.568369999999998, longitude: -46.64356),
-	 CLLocationCoordinate2D(latitude: -23.568129999999996, longitude: -46.64414),
-	 CLLocationCoordinate2D(latitude: -23.566539999999996, longitude: -46.64521),
-	 CLLocationCoordinate2D(latitude: -23.565479999999994, longitude: -46.647619999999996),
-	 CLLocationCoordinate2D(latitude: -23.565299999999993, longitude: -46.64872999999999),
-	 CLLocationCoordinate2D(latitude: -23.565169999999995, longitude: -46.64983999999999),
-	 CLLocationCoordinate2D(latitude: -23.564339999999998, longitude: -46.652829999999994),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57367, longitude: -46.6691),
-	 CLLocationCoordinate2D(latitude: -23.57021, longitude: -46.66427),
-	 CLLocationCoordinate2D(latitude: -23.56207, longitude: -46.65585),
-	 CLLocationCoordinate2D(latitude: -23.562359999999998, longitude: -46.6555),
-	 CLLocationCoordinate2D(latitude: -23.562289999999997, longitude: -46.65543),
-	 CLLocationCoordinate2D(latitude: -23.56273, longitude: -46.654900000000005),
-	 CLLocationCoordinate2D(latitude: -23.562669999999997, longitude: -46.65484000000001),
-	 CLLocationCoordinate2D(latitude: -23.563879999999997, longitude: -46.653380000000006),
-	 CLLocationCoordinate2D(latitude: -23.563869999999998, longitude: -46.653040000000004),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287000000001)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57457, longitude: -46.65277),
-	 CLLocationCoordinate2D(latitude: -23.573970000000003, longitude: -46.65358),
-	 CLLocationCoordinate2D(latitude: -23.573080000000004, longitude: -46.65278),
-	 CLLocationCoordinate2D(latitude: -23.569240000000004, longitude: -46.64929),
-	 CLLocationCoordinate2D(latitude: -23.567940000000004, longitude: -46.64897),
-	 CLLocationCoordinate2D(latitude: -23.567770000000003, longitude: -46.64881),
-	 CLLocationCoordinate2D(latitude: -23.56452, longitude: -46.65276),
-	 CLLocationCoordinate2D(latitude: -23.56445, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.56429, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57472, longitude: -46.64318),
-	 CLLocationCoordinate2D(latitude: -23.57469, longitude: -46.64311),
-	 CLLocationCoordinate2D(latitude: -23.57187, longitude: -46.6444),
-	 CLLocationCoordinate2D(latitude: -23.57139, longitude: -46.64429),
-	 CLLocationCoordinate2D(latitude: -23.57101, longitude: -46.64474),
-	 CLLocationCoordinate2D(latitude: -23.57095, longitude: -46.64469),
-	 CLLocationCoordinate2D(latitude: -23.56764, longitude: -46.648979999999995),
-	 CLLocationCoordinate2D(latitude: -23.56452, longitude: -46.652759999999994),
-	 CLLocationCoordinate2D(latitude: -23.56445, longitude: -46.65268999999999),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57231, longitude: -46.63613),
-	 CLLocationCoordinate2D(latitude: -23.573, longitude: -46.636160000000004),
-	 CLLocationCoordinate2D(latitude: -23.572580000000002, longitude: -46.63739),
-	 CLLocationCoordinate2D(latitude: -23.57336, longitude: -46.637710000000006),
-	 CLLocationCoordinate2D(latitude: -23.574350000000003, longitude: -46.637910000000005),
-	 CLLocationCoordinate2D(latitude: -23.573610000000002, longitude: -46.640390000000004),
-	 CLLocationCoordinate2D(latitude: -23.57306, longitude: -46.641890000000004),
-	 CLLocationCoordinate2D(latitude: -23.56756, longitude: -46.64894),
-	 CLLocationCoordinate2D(latitude: -23.56434, longitude: -46.65283),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56512, longitude: -46.64607),
-	 CLLocationCoordinate2D(latitude: -23.56566, longitude: -46.64647),
-	 CLLocationCoordinate2D(latitude: -23.565080000000002, longitude: -46.64729),
-	 CLLocationCoordinate2D(latitude: -23.56548, longitude: -46.647619999999996),
-	 CLLocationCoordinate2D(latitude: -23.56512, longitude: -46.648059999999994),
-	 CLLocationCoordinate2D(latitude: -23.5653, longitude: -46.64872999999999),
-	 CLLocationCoordinate2D(latitude: -23.565730000000002, longitude: -46.64916999999999),
-	 CLLocationCoordinate2D(latitude: -23.566070000000003, longitude: -46.65073999999999),
-	 CLLocationCoordinate2D(latitude: -23.564340000000005, longitude: -46.652829999999994),
-	 CLLocationCoordinate2D(latitude: -23.564110000000007, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56884, longitude: -46.65327),
-	 CLLocationCoordinate2D(latitude: -23.568730000000002, longitude: -46.65341),
-	 CLLocationCoordinate2D(latitude: -23.567960000000003, longitude: -46.65264),
-	 CLLocationCoordinate2D(latitude: -23.56677, longitude: -46.65407),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.652339999999995),
-	 CLLocationCoordinate2D(latitude: -23.564550000000003, longitude: -46.65252),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.65282),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56884, longitude: -46.65327),
-	 CLLocationCoordinate2D(latitude: -23.568730000000002, longitude: -46.65341),
-	 CLLocationCoordinate2D(latitude: -23.567960000000003, longitude: -46.65264),
-	 CLLocationCoordinate2D(latitude: -23.56677, longitude: -46.65407),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.652339999999995),
-	 CLLocationCoordinate2D(latitude: -23.564550000000003, longitude: -46.65252),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.65282),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56884, longitude: -46.65327),
-	 CLLocationCoordinate2D(latitude: -23.568730000000002, longitude: -46.65341),
-	 CLLocationCoordinate2D(latitude: -23.567960000000003, longitude: -46.65264),
-	 CLLocationCoordinate2D(latitude: -23.56677, longitude: -46.65407),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.652339999999995),
-	 CLLocationCoordinate2D(latitude: -23.564550000000003, longitude: -46.65252),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.65282),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57444, longitude: -46.66084),
-	 CLLocationCoordinate2D(latitude: -23.57412, longitude: -46.66048),
-	 CLLocationCoordinate2D(latitude: -23.57373, longitude: -46.66088),
-	 CLLocationCoordinate2D(latitude: -23.57073, longitude: -46.65588),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.652339999999995),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.65282),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564350000000004, longitude: -46.65272),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56926, longitude: -46.67004),
-	 CLLocationCoordinate2D(latitude: -23.56899, longitude: -46.66965),
-	 CLLocationCoordinate2D(latitude: -23.570159999999998, longitude: -46.6684),
-	 CLLocationCoordinate2D(latitude: -23.56883, longitude: -46.66524),
-	 CLLocationCoordinate2D(latitude: -23.562649999999998, longitude: -46.658609999999996),
-	 CLLocationCoordinate2D(latitude: -23.561989999999998, longitude: -46.65780999999999),
-	 CLLocationCoordinate2D(latitude: -23.562219999999996, longitude: -46.65721999999999),
-	 CLLocationCoordinate2D(latitude: -23.561939999999996, longitude: -46.65599999999999),
-	 CLLocationCoordinate2D(latitude: -23.562669999999994, longitude: -46.65483999999999),
-	 CLLocationCoordinate2D(latitude: -23.564109999999996, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56542, longitude: -46.66175),
-	 CLLocationCoordinate2D(latitude: -23.56262, longitude: -46.65885),
-	 CLLocationCoordinate2D(latitude: -23.561989999999998, longitude: -46.65781),
-	 CLLocationCoordinate2D(latitude: -23.562369999999998, longitude: -46.657379999999996),
-	 CLLocationCoordinate2D(latitude: -23.562069999999995, longitude: -46.656729999999996),
-	 CLLocationCoordinate2D(latitude: -23.562219999999996, longitude: -46.65636),
-	 CLLocationCoordinate2D(latitude: -23.562359999999995, longitude: -46.655499999999996),
-	 CLLocationCoordinate2D(latitude: -23.562729999999995, longitude: -46.6549),
-	 CLLocationCoordinate2D(latitude: -23.563989999999993, longitude: -46.65291),
-	 CLLocationCoordinate2D(latitude: -23.564109999999992, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.55975, longitude: -46.64827),
-	 CLLocationCoordinate2D(latitude: -23.559990000000003, longitude: -46.648759999999996),
-	 CLLocationCoordinate2D(latitude: -23.56031, longitude: -46.64883),
-	 CLLocationCoordinate2D(latitude: -23.56071, longitude: -46.649519999999995),
-	 CLLocationCoordinate2D(latitude: -23.56109, longitude: -46.64955),
-	 CLLocationCoordinate2D(latitude: -23.562070000000002, longitude: -46.65079),
-	 CLLocationCoordinate2D(latitude: -23.56246, longitude: -46.65006),
-	 CLLocationCoordinate2D(latitude: -23.563080000000003, longitude: -46.6505),
-	 CLLocationCoordinate2D(latitude: -23.56434, longitude: -46.65283),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57586, longitude: -46.66297),
-	 CLLocationCoordinate2D(latitude: -23.57471, longitude: -46.66113),
-	 CLLocationCoordinate2D(latitude: -23.57412, longitude: -46.66048),
-	 CLLocationCoordinate2D(latitude: -23.57373, longitude: -46.66088),
-	 CLLocationCoordinate2D(latitude: -23.57073, longitude: -46.65788),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.652339999999995),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.65282),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.65286),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56559, longitude: -46.63112),
-	 CLLocationCoordinate2D(latitude: -23.566850000000002, longitude: -46.660799999999995),
-	 CLLocationCoordinate2D(latitude: -23.562070000000002, longitude: -46.655849999999994),
-	 CLLocationCoordinate2D(latitude: -23.56236, longitude: -46.655499999999996),
-	 CLLocationCoordinate2D(latitude: -23.562730000000002, longitude: -46.6549),
-	 CLLocationCoordinate2D(latitude: -23.56267, longitude: -46.65484),
-	 CLLocationCoordinate2D(latitude: -23.56388, longitude: -46.65338),
-	 CLLocationCoordinate2D(latitude: -23.56387, longitude: -46.65304),
-	 CLLocationCoordinate2D(latitude: -23.56399, longitude: -46.65291),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56461, longitude: -46.63375),
-	 CLLocationCoordinate2D(latitude: -23.564, longitude: -46.63496),
-	 CLLocationCoordinate2D(latitude: -23.56437, longitude: -46.63528),
-	 CLLocationCoordinate2D(latitude: -23.5633, longitude: -46.63893),
-	 CLLocationCoordinate2D(latitude: -23.561680000000003, longitude: -46.64443),
-	 CLLocationCoordinate2D(latitude: -23.56548, longitude: -46.647619999999996),
-	 CLLocationCoordinate2D(latitude: -23.5653, longitude: -46.64872999999999),
-	 CLLocationCoordinate2D(latitude: -23.565730000000002, longitude: -46.64916999999999),
-	 CLLocationCoordinate2D(latitude: -23.564340000000005, longitude: -46.652829999999994),
-	 CLLocationCoordinate2D(latitude: -23.564110000000007, longitude: -46.65286999999999)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56363, longitude: -46.641020000000005),
-	 CLLocationCoordinate2D(latitude: -23.56435, longitude: -46.64124),
-	 CLLocationCoordinate2D(latitude: -23.56259, longitude: -46.64519000000001),
-	 CLLocationCoordinate2D(latitude: -23.56548, longitude: -46.64762),
-	 CLLocationCoordinate2D(latitude: -23.56512, longitude: -46.64806),
-	 CLLocationCoordinate2D(latitude: -23.5653, longitude: -46.64873),
-	 CLLocationCoordinate2D(latitude: -23.565730000000002, longitude: -46.64917),
-	 CLLocationCoordinate2D(latitude: -23.566070000000003, longitude: -46.65074),
-	 CLLocationCoordinate2D(latitude: -23.564340000000005, longitude: -46.65283),
-	 CLLocationCoordinate2D(latitude: -23.564110000000007, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.57128, longitude: -46.65439),
-	 CLLocationCoordinate2D(latitude: -23.57165, longitude: -46.65477),
-	 CLLocationCoordinate2D(latitude: -23.57028, longitude: -46.65459),
-	 CLLocationCoordinate2D(latitude: -23.56933, longitude: -46.65657),
-	 CLLocationCoordinate2D(latitude: -23.56499, longitude: -46.65234),
-	 CLLocationCoordinate2D(latitude: -23.56479, longitude: -46.65254),
-	 CLLocationCoordinate2D(latitude: -23.564580000000003, longitude: -46.652820000000006),
-	 CLLocationCoordinate2D(latitude: -23.564450000000004, longitude: -46.65269000000001),
-	 CLLocationCoordinate2D(latitude: -23.564290000000003, longitude: -46.652860000000004),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287000000001)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.55976, longitude: -46.65596),
-	 CLLocationCoordinate2D(latitude: -23.55903, longitude: -46.65569),
-	 CLLocationCoordinate2D(latitude: -23.56021, longitude: -46.6564),
-	 CLLocationCoordinate2D(latitude: -23.560930000000003, longitude: -46.65559),
-	 CLLocationCoordinate2D(latitude: -23.561040000000002, longitude: -46.65545999999999),
-	 CLLocationCoordinate2D(latitude: -23.56143, longitude: -46.65542999999999),
-	 CLLocationCoordinate2D(latitude: -23.56388, longitude: -46.653379999999984),
-	 CLLocationCoordinate2D(latitude: -23.56387, longitude: -46.65303999999998),
-	 CLLocationCoordinate2D(latitude: -23.56399, longitude: -46.652909999999984),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.652869999999986)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.562070000000002, longitude: -46.65585),
-	 CLLocationCoordinate2D(latitude: -23.56734, longitude: -46.66131),
-	 CLLocationCoordinate2D(latitude: -23.56236, longitude: -46.6555),
-	 CLLocationCoordinate2D(latitude: -23.56229, longitude: -46.65543),
-	 CLLocationCoordinate2D(latitude: -23.562730000000002, longitude: -46.654900000000005),
-	 CLLocationCoordinate2D(latitude: -23.56267, longitude: -46.65484000000001),
-	 CLLocationCoordinate2D(latitude: -23.56388, longitude: -46.653380000000006),
-	 CLLocationCoordinate2D(latitude: -23.56387, longitude: -46.653040000000004),
-	 CLLocationCoordinate2D(latitude: -23.56399, longitude: -46.652910000000006),
-	 CLLocationCoordinate2D(latitude: -23.56411, longitude: -46.65287000000001)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.562070000000002, longitude: -46.655849999999994),
-	 CLLocationCoordinate2D(latitude: -23.56998, longitude: -46.66403),
-	 CLLocationCoordinate2D(latitude: -23.56236, longitude: -46.655499999999996),
-	 CLLocationCoordinate2D(latitude: -23.56229, longitude: -46.655429999999996),
-	 CLLocationCoordinate2D(latitude: -23.562730000000002, longitude: -46.6549),
-	 CLLocationCoordinate2D(latitude: -23.56267, longitude: -46.65484),
-	 CLLocationCoordinate2D(latitude: -23.56367, longitude: -46.65384),
-	 CLLocationCoordinate2D(latitude: -23.56388, longitude: -46.65338),
-	 CLLocationCoordinate2D(latitude: -23.56387, longitude: -46.65304),
-	 CLLocationCoordinate2D(latitude: -23.564110000000003, longitude: -46.65287)],
-	 [
-	 CLLocationCoordinate2D(latitude: -23.56781, longitude: -46.65665),
-	 CLLocationCoordinate2D(latitude: -23.56729, longitude: -46.65724),
-	 CLLocationCoordinate2D(latitude: -23.56429, longitude: -46.65524),
-	 CLLocationCoordinate2D(latitude: -23.56375, longitude: -46.65382),
-	 CLLocationCoordinate2D(latitude: -23.564059999999998, longitude: -46.65345000000001),
-	 CLLocationCoordinate2D(latitude: -23.56393, longitude: -46.65332000000001),
-	 CLLocationCoordinate2D(latitude: -23.563879999999997, longitude: -46.653380000000006),
-	 CLLocationCoordinate2D(latitude: -23.563869999999998, longitude: -46.653040000000004),
-	 CLLocationCoordinate2D(latitude: -23.563989999999997, longitude: -46.652910000000006),
-	 CLLocationCoordinate2D(latitude: -23.564109999999996, longitude: -46.65287000000001)]]
+	private var playerMarkerViews: [UIView] = []
 	
 	private var exists: Bool = false
 	
@@ -474,10 +136,16 @@ class MapViewController: UIViewController {
 		
 		configureMapStyle()
 		createPanGestureRecognizer(targetView: locationListView)
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		
-		Auth.auth().signInAnonymously(completion: { (user, error) in
-			self.observePlayers()
-		})
+		if Auth.auth().currentUser != nil {
+			profileButton.setImage(#imageLiteral(resourceName: "logout-2"), for: .normal)
+		} else {
+			profileButton.setImage(#imageLiteral(resourceName: "profile_icon"), for: .normal)
+		}
 	}
 	
 	deinit {
@@ -742,13 +410,34 @@ class MapViewController: UIViewController {
 			let player = Player([
 				"id": playerData["id"] ?? 0,
 				"name": playerData["name"] ?? "",
+				"lastName": playerData["lastName"] ?? "",
+				"initials": playerData["initials"] ?? "",
 				"icon": playerData["icon"] ?? "",
 				"clickCount": playerData["clickCount"] ?? ""
 				] as [String : Any])
 			
 			let playerMarker = GMSMarker()
 			
-			playerMarker.iconView = playerMarkerView
+			playerMarkerView.playerInitialsLabel.text = player.initials
+			
+			let copyPlayerMarkerView = playerMarkerView.copyView()
+			
+			copyPlayerMarkerView.layer.borderColor = UIColor.white.cgColor
+			copyPlayerMarkerView.layer.borderWidth = 1.5
+			copyPlayerMarkerView.layer.cornerRadius = 6
+			
+			switch (player.icon) {
+				case "roxo":
+					copyPlayerMarkerView.backgroundColor = UIColor(red: 115/255, green: 44/255, blue: 123/255, alpha: 1)
+				case "laranja":
+					copyPlayerMarkerView.backgroundColor = UIColor(red: 255/255, green: 147/255, blue: 0/255, alpha: 1)
+				case "cinza":
+					copyPlayerMarkerView.backgroundColor = .darkGray
+			    default:
+					copyPlayerMarkerView.backgroundColor = UIColor(red: 255/255, green: 147/255, blue: 0/255, alpha: 1)
+			}
+			
+			playerMarker.iconView = copyPlayerMarkerView //playerMarkerViews[player.id]
 			playerMarker.map = mapView
 			playerMarker.appearAnimation = GMSMarkerAnimation.pop
 			
@@ -756,7 +445,7 @@ class MapViewController: UIViewController {
 			
 			CATransaction.begin()
 			CATransaction.setAnimationDuration(0.5)
-			playerMarkers[player.id].position = playersCoordinates[player.id][0]
+//			playerMarkers[player.id + 1].position = playersCoordinates[player.id + 1][0]
 //			playerMarkers[player.id].rotation = (lastLocation?.course)!
 			CATransaction.commit()
 		
@@ -771,18 +460,11 @@ class MapViewController: UIViewController {
 			let player = Player([
 				"id": playerData["id"] ?? 0,
 				"name": playerData["name"] ?? "",
+				"lastName": playerData["lastName"] ?? "",
+				"initials": playerData["initials"] ?? "",
 				"icon": playerData["icon"] ?? "",
 				"clickCount": playerData["clickCount"] ?? 0
 				] as [String : Any])
-			
-			if playersCoordinates.count > player.id {
-				CATransaction.begin()
-				CATransaction.setAnimationDuration(0.5)
-				playerMarkers[player.id].position = playersCoordinates[player.id][player.clickCount]
-				CATransaction.commit()
-			} else {
-				// Player won
-			}
 		} else {
 			print("Error! Could not decode channel data")
 		}
@@ -840,7 +522,6 @@ class MapViewController: UIViewController {
 	
     func directionsSearch(coordinates: CLLocationCoordinate2D) {
     	print(coordinates)
-    	print(playersCoordinates.count)
 		
 		let waypoints = [
 			Waypoint(coordinate: coordinates, name: "Player"),
@@ -915,6 +596,13 @@ class MapViewController: UIViewController {
 		closeSearch()
 	}
 	
+	@IBAction func profile(_ sender: Any) {
+		if Auth.auth().currentUser != nil {
+			do {
+				try Auth.auth().signOut()
+			} catch {}
+		}
+	}
 }
 
 
@@ -1162,10 +850,28 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 //		cell?.gradientView.backgroundColor = .clear
 //		cell?.titleLabel.textColor = .white
 //		cell?.countLabel.textColor = .white
+		
+		switch indexPath.item {
+			case 0:
+				cell?.titleLabel.text = "Veículos"
+				cell?.countLabel.text = ""
+			default:
+				break
+		}
+
 		cell?.optionIconView.layer.borderColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1).cgColor
 		
 		return cell!
     }
+	
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		switch indexPath.item {
+			case 0:
+				print(1)
+			default:
+				break
+		}
+	}
 	
 }
 
@@ -1180,4 +886,8 @@ extension UIView {
 
 	   layer.insertSublayer(gradientLayer, at: 0)
 	}
+	
+    func copyView<T: UIView>() -> T {
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
+    }
 }

@@ -77,13 +77,14 @@ PODS:
   - leveldb-library (1.20)
   - MapboxDirections.swift (0.25.2):
     - Polyline (~> 4.2)
-  - MapboxGeocoder.swift (0.10.0)
+  - MapboxGeocoder.swift (0.10.2)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Polyline (4.2.0)
+  - SCLAlertView (0.8)
   - Tailor (3.0.0)
 
 DEPENDENCIES:
@@ -95,6 +96,7 @@ DEPENDENCIES:
   - GooglePlaces
   - MapboxDirections.swift
   - MapboxGeocoder.swift
+  - SCLAlertView
   - Tailor
 
 SPEC REPOS:
@@ -117,6 +119,7 @@ SPEC REPOS:
     - MapboxGeocoder.swift
     - nanopb
     - Polyline
+    - SCLAlertView
     - Tailor
 
 SPEC CHECKSUMS:
@@ -135,11 +138,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MapboxDirections.swift: b56df67e980d8abc5eb07391485ad5696043dce1
-  MapboxGeocoder.swift: fc21bff95696aa618c396bd472ef0924ba9ccd2e
+  MapboxGeocoder.swift: 8cff5dddf98d87838509bf80a5bce5f1d0cf8393
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Polyline: 3d69f75bb136357e27291d439d0436c6ebda57a4
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   Tailor: 4fb574e8815d076abbf2bd7ffdbf4b14103fe17c
 
-PODFILE CHECKSUM: 27d816da8c9c6edaf99cdf313021c8ca78b7b2fc
+PODFILE CHECKSUM: 3bec7d5886fd0e44428c83065cd4baae33f5e66b
 
 COCOAPODS: 1.5.3

@@ -44,6 +44,7 @@
             <connections>
                 <outlet property="playerInitialsLabel" destination="4fz-ae-WVu" id="d8G-yv-drZ"/>
             </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="143.92803598200899"/>
         </view>
     </objects>
 </document>

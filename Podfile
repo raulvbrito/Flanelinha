@@ -14,6 +14,7 @@ target 'Flanelinha' do
   pod 'GooglePlaces'
   pod 'MapboxDirections.swift'
   pod 'MapboxGeocoder.swift'
+  pod 'SCLAlertView'
   pod 'Tailor'
 
   target 'FlanelinhaTests' do

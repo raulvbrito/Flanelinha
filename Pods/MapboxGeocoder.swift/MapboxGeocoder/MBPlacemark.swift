@@ -95,12 +95,6 @@ open class Placemark: NSObject, Codable {
         }
         
         code = try container.decodeIfPresent(String.self, forKey: .code)?.uppercased()
-        if let rawIdentifier = try container.decodeIfPresent(String.self, forKey: .wikidataItemIdentifier) {
-            let identifier = rawIdentifier.trimmingCharacters(in: .whitespacesAndNewlines)
-            assert(identifier.hasPrefix("Q"))
-            wikidataItemIdentifier = identifier
-        }
-        
         properties = try container.decodeIfPresent(Properties.self, forKey: .properties)
         
         if let boundingBox = try container.decodeIfPresent([CLLocationDegrees].self, forKey: .boundingBox) {
@@ -125,9 +119,12 @@ open class Placemark: NSObject, Codable {
         }
     }
     
+    #if swift(>=4.2)
+    #else
     @objc open override var hashValue: Int {
         return identifier.hashValue
     }
+    #endif
     
     @objc open override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? Placemark {
@@ -195,7 +192,11 @@ open class Placemark: NSObject, Codable {
      
      The Wikidata item contains structured information about the feature represented by the placemark. It also links to corresponding entries in various free content or open data resources, including Wikipedia, Wikimedia Commons, Wikivoyage, and Freebase.
      */
-    @objc open var wikidataItemIdentifier: String?
+    @objc open var wikidataItemIdentifier: String? {
+        get {
+            return properties?.wikidata
+        }
+    }
     
     /**
      An array of keywords that describe the genre of the point of interest represented by the placemark.
@@ -376,6 +377,7 @@ internal struct Properties: Codable {
         case maki
         case address
         case category
+        case wikidata
     }
     
     let shortCode: String?
@@ -383,6 +385,7 @@ internal struct Properties: Codable {
     let phoneNumber: String?
     let address: String?
     let category: String?
+    let wikidata: String?
 }
 
 // Used internally for flattening and transforming routable_points.points.coordinates

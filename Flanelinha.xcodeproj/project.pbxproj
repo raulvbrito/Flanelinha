@@ -30,6 +30,8 @@
 		41AC3CC221A31E9600A32DCC /* FlanelinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CC121A31E9600A32DCC /* FlanelinhaTests.swift */; };
 		41AC3CCD21A31E9600A32DCC /* FlanelinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */; };
 		41AC3CE321A36E5600A32DCC /* dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 41AC3CE221A36DD200A32DCC /* dark.json */; };
+		41C9BAF9227929E00006CBA1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C9BAF8227929E00006CBA1 /* ProfileViewController.swift */; };
+		41C9BAFB2279525F0006CBA1 /* VehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C9BAFA2279525F0006CBA1 /* VehiclesViewController.swift */; };
 		6DEFC857D10F5CD5E9006EC3 /* Pods_FlanelinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C330FE10952517B099AADFDB /* Pods_FlanelinhaTests.framework */; };
 		FC0DA3684E3BDDF30CD6A544 /* Pods_FlanelinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99F94A17677D1580C817F09 /* Pods_FlanelinhaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		41AC3CCC21A31E9600A32DCC /* FlanelinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlanelinhaUITests.swift; sourceTree = "<group>"; };
 		41AC3CCE21A31E9600A32DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AC3CE221A36DD200A32DCC /* dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dark.json; sourceTree = "<group>"; };
+		41C9BAF8227929E00006CBA1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		41C9BAFA2279525F0006CBA1 /* VehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewController.swift; sourceTree = "<group>"; };
 		525DE51CA4A592D4C6912BBB /* Pods-FlanelinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaUITests/Pods-FlanelinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CD165B221721F1C8A824748 /* Pods-FlanelinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlanelinhaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlanelinhaTests/Pods-FlanelinhaTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF2E9D15651F0D86B54171D7 /* Pods-Flanelinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flanelinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flanelinha/Pods-Flanelinha.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				41AC3CAB21A31E9300A32DCC /* MapViewController.swift */,
+				41C9BAF8227929E00006CBA1 /* ProfileViewController.swift */,
+				41C9BAFA2279525F0006CBA1 /* VehiclesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
 				"${BUILT_PRODUCTS_DIR}/MapboxGeocoder.swift/MapboxGeocoder.framework",
 				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/Tailor/Tailor.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -498,6 +505,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxGeocoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tailor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -561,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416AFF1D21B9723C00F9E8B6 /* Player.swift in Sources */,
+				41C9BAFB2279525F0006CBA1 /* VehiclesViewController.swift in Sources */,
 				41AC3CB221A31E9300A32DCC /* Flanelinha.xcdatamodeld in Sources */,
 				4165DEB621AC80F800C74F2E /* LocationTableViewCell.swift in Sources */,
 				413A796321AEFF22001D79DD /* Location.swift in Sources */,
@@ -570,6 +579,7 @@
 				416AFF2121B9B40C00F9E8B6 /* PlayerMarkerView.swift in Sources */,
 				419FF3E821A5E26200977C34 /* OptionCollectionViewCell.swift in Sources */,
 				41AC3CAA21A31E9300A32DCC /* AppDelegate.swift in Sources */,
+				41C9BAF9227929E00006CBA1 /* ProfileViewController.swift in Sources */,
 				41A4EFB921B1A97C00862F7A /* SelectedParkingMarkerView.swift in Sources */,
 				417453BB21A883B400918180 /* ParkingMarkerView.swift in Sources */,
 			);
@@ -748,8 +758,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LFG72U4M9F;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
 				INFOPLIST_FILE = Flanelinha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -767,8 +778,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LFG72U4M9F;
+				DEVELOPMENT_TEAM = 4QDFB98CYU;
 				INFOPLIST_FILE = Flanelinha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
