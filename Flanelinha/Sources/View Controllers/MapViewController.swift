@@ -13,6 +13,7 @@ import GooglePlaces
 import MapboxDirections
 import MapboxGeocoder
 import SCLAlertView
+import CoreData
 
 enum PulsingViewAnimation: String {
 	case animating
@@ -119,6 +120,8 @@ class MapViewController: UIViewController {
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		  return .lightContent
 	}
+	
+	var fetchedResultsController: NSFetchedResultsController<Vehicle>!
 	
 	
 	// MARK: - Methods
@@ -839,7 +842,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
     }
 	
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 15
+		return 4
     }
 	
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -855,6 +858,15 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 			case 0:
 				cell?.titleLabel.text = "Veículos"
 				cell?.countLabel.text = ""
+			case 1:
+				cell?.titleLabel.text = "Sobre"
+				cell?.countLabel.text = ""
+			case 2:
+				cell?.titleLabel.text = "Entre em contato"
+				cell?.countLabel.text = ""
+			case 3:
+				cell?.titleLabel.text = "Compartilhe"
+				cell?.countLabel.text = ""
 			default:
 				break
 		}
@@ -867,7 +879,16 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		switch indexPath.item {
 			case 0:
-				print(1)
+				self.performSegue(withIdentifier: "vehiclesSegue", sender: nil)
+			case 1:
+				self.performSegue(withIdentifier: "aboutSegue", sender: nil)
+			case 2:
+				UIApplication.shared.open(URL(string: "tel://11986770136")!, options: [:], completionHandler: nil)
+			case 3:
+				let activityViewController = UIActivityViewController(activityItems: ["Flanelinha na App Store"], applicationActivities: nil)
+				activityViewController.popoverPresentationController?.sourceView = self.view
+
+				self.present(activityViewController, animated: true, completion: nil)
 			default:
 				break
 		}

@@ -27,6 +27,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		FirebaseApp.configure()
 		
+//		if #available(iOS 10.0, *) {
+//		  	// For iOS 10 display notification (sent via APNS)
+//			NotificationCenter.current().delegate = self
+//
+//		  	let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//			NotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+//		} else {
+//		  	let settings: UIUserNotificationSettings =
+//		  	UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//		  	application.registerUserNotificationSettings(settings)
+//		}
+//
+//		application.registerForRemoteNotifications()
+//		
+//		Messaging.messaging().delegate = self
+		
 		return true
 	}
 
